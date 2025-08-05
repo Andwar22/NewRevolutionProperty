@@ -6,6 +6,7 @@
 /* #region ============= GLOBAL ============= */
     body {
         font-family: var(--outfit);
+        background-color: var(--white);
     }
     section {
         width: 100%;
@@ -125,11 +126,12 @@
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        padding: 2rem 3rem;
+        padding: 1.4rem 4rem;
         margin-inline: auto;
         background: transparent;
-        box-shadow: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,.5);
         transition: var(--anim);
+        isolation: isolate;
         z-index: 100;
 
         & #nav-toggle {
@@ -145,12 +147,14 @@
             align-items: center;
 
             & a {
+                display: grid;
+                place-items: center;
+                color: var(--putih);
                 text-decoration: none;
             }
             & svg {
-                max-width: 175px;
-                height: auto;
-                fill: var(--black);
+                width: auto;
+                height: 36px;
             }
         }
         
@@ -161,7 +165,7 @@
             & ul {
                 display: flex;
                 align-items: center;
-                gap: 2rem;
+                gap: 3rem;
                 padding: 0;
                 margin: 0;
 
@@ -169,8 +173,10 @@
                     list-style: none;
 
                     & a {
-                        color: var(--black);
+                        color: var(--putih);
+                        font-size: 1rem;
                         text-decoration: none;
+                        text-transform: capitalize;
                         transition: var(--anim);
 
                         &:is(:hover, :active) {
@@ -298,6 +304,21 @@
                 }
             }
         }
+
+        & .glass {
+            position: absolute;
+            inset: 0;
+            background: hsl(from var(--white) h s l / .15);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            box-shadow: 
+                0 8px 32px hsl(from var(--white) h s l / .1),
+                inset 0 1px 0 hsl(from var(--white) h s l / .35),
+                inset 0 -1px 0 hsl(from var(--white) h s l / .1),
+                inset 0 0 50px 10px hsl(from var(--white) h s l / .5);
+            overflow: hidden;
+            z-index: -1;
+        }
     }
 /* #endregion ========== NAVBAR ============= */
 
@@ -306,6 +327,7 @@
         position: relative;
         width: 100%;
         height: 100vh;
+        background-color: var(--hitam);
         isolation: isolate;
 
         & .hero {
@@ -315,6 +337,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            opacity: .8;
             z-index: -1;
         }
 
@@ -324,71 +347,127 @@
             display: grid;
             grid-template-columns: auto max-content;
             align-items: flex-end;
-            padding: 0 3rem 5rem 3rem;
+            padding: 0 4rem 4rem 4rem;
 
             & .left {
                 color: var(--putih);
 
-                & button {
-                    padding: 0;
+                & div {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    height: 60px;
+                    width: 200px;
+                    padding: .5rem;
+                    margin-bottom: 3rem;
+                    background: hsl(from var(--putih) h s l / .15);
+                    backdrop-filter: blur(15px);
+                    -webkit-backdrop-filter: blur(15px);
+                    box-shadow: 
+                    0 6px 20px hsl(from var(--putih) h s l / .1),
+                    inset 0 1px 0 hsl(from var(--putih) h s l / .35),
+                    inset 0 -1px 0 hsl(from var(--putih) h s l / .1),
+                    inset 0 0 30px 6px hsl(from var(--putih) h s l / .65);
+                    border-radius: 3rem;
+                    cursor: pointer;
+                    
+                    & i {
+                        position: absolute;
+                        left: .5rem;
+                        display: grid;
+                        place-items: center;
+                        color: var(--grey);
+                        font-size: 1.75rem;
+                        height: 75%;
+                        aspect-ratio: 1;
+                        background-color: var(--putih);
+                        border-radius: 50%;
+                        transition: var(--anim);
+                    }
+                    &:hover i {
+                        left: calc(100% - 3.25rem);
+                    }
+                    & span {
+                        font-size: 1.15rem;
+                        font-weight: 600;
+                        text-transform: capitalize;
+                        padding-left: 3.5rem;
+                        transition: var(--anim);
+                    }
+                    &:hover span {
+                        padding-left: .75rem;
+                    }
                 }
                 & p:first-of-type {
                     font-family: var(--bebas);
-                    font-size: 5rem;
+                    font-size: 5.5rem;
                     font-weight: 700;
-                    line-height: 1.2;
+                    line-height: 1.1;
                     margin-bottom: 0;
-                    text-shadow: 0 0 158x rgba(0,0,0,.75);
+                    text-shadow: 0 0 20px rgba(0,0,0,.75);
                 }
                 & p:last-child {
-                    font-size: 1.25rem;
+                    font-size: 1.5rem;
                     margin-bottom: 0;
-                    text-shadow: 0 0 10px rgba(0,0,0,.75);
+                    text-shadow: 0 0 5px rgb(0,0,0);
                 }
             }
 
             & .right {
                 min-width: 200px;
+                margin-bottom: 1rem;
 
-                & .visitors > div {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    min-height: 42px;
+                
 
-                    & span {
-                        position: absolute;
-                        left: calc(1.5rem * var(--numb));
-                        display: block;
-                        height: 42px;
-                        aspect-ratio: 1;
-                        border: 3px solid #fff;
-                        border-radius: 50%;
-                        transition: left .3s ease;
+                & .visitors {
+                    & > p {
+                        color: var(--putih);
+                        font-size: 1rem;
+                        text-shadow: 0 0 5px rgb(0,0,0);
+                        margin-bottom: .75rem;
+                    }
+                    & > div {
+                        --circHeight: 46px;
 
-                        &:hover {
-                            left: calc(1.5rem * var(--numb) - .25rem);
-                        }
-                        & img {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        min-height: var(--circHeight);
+
+                        & span {
+                            position: absolute;
+                            left: calc(1.75rem * var(--numb));
                             display: block;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                        &:last-child {
-                            position: relative;
-                            overflow: hidden;
+                            height: var(--circHeight);
+                            aspect-ratio: 1;
+                            border: 3px solid #fff;
+                            border-radius: 50%;
+                            transition: left .3s ease;
 
-                            &::before {
-                                content: '1k+';
-                                position: absolute;
-                                inset: 0;
-                                display: grid;
-                                place-items: center;
-                                color: #fff;
-                                font-size: .8rem;
-                                background-color: rgba(0,0,0,0.65);
-                                z-index: 5;
+                            &:hover {
+                                left: calc(1.75rem * var(--numb) - .35rem);
+                            }
+                            & img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                            &:last-child {
+                                position: relative;
+                                overflow: hidden;
+
+                                &::before {
+                                    content: '1k+';
+                                    position: absolute;
+                                    inset: 0;
+                                    display: grid;
+                                    place-items: center;
+                                    color: #fff;
+                                    font-size: .8rem;
+                                    background-color: rgba(0,0,0,0.65);
+                                    z-index: 5;
+                                }
                             }
                         }
                     }

@@ -50,25 +50,23 @@
       // === Ubah Style Navbar ===
       if (scrollPos > 70) {
         if (currentDevice === "desktop") {
-          navbar.style.padding = "1rem 3rem";
-          navbar.style.background = "var(--white)";
-          navbar.style.boxShadow = "0 5px 15px #69696933";
+          navbar.style.padding = ".9rem 4rem";
+          // navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.5)";
         }
         else if (currentDevice === "tablet") {
-          navbar.style.padding = "1rem 3rem";
+          // navbar.style.padding = "1rem 3rem";
         }
         else if (currentDevice === "mobile") {
-          navbar.style.padding = "1rem 1.5rem";
+          // navbar.style.padding = "1rem 1.5rem";
         }
       }
       else {
         if (currentDevice === "desktop") {
-          navbar.style.padding = "2rem 3rem";
-          navbar.style.background = "transparent";
-          navbar.style.boxShadow = "none";
+          navbar.style.padding = "1.4rem 4rem";
+          // navbar.style.boxShadow = "none";
         }
         else if (currentDevice === "tablet") {
-          navbar.style.padding = "1rem 3rem";
+          // navbar.style.padding = "1rem 3rem";
         }
       }
 
@@ -76,11 +74,13 @@
       if (Math.abs(lastScrollTop - scrollPos) > delta) {
         if (scrollPos > lastScrollTop && scrollPos > scrollThreshold) {
           // Scroll ke bawah
-          navbar.style.top = "-4.5rem";
+          navbar.style.top = "-5rem";
+          navbar.style.boxShadow = "none"
         }
         else {
           // Scroll ke atas
           navbar.style.top = "0";
+          navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.5)"
         }
         lastScrollTop = scrollPos;
       }
