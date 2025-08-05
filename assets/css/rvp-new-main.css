@@ -330,7 +330,7 @@
                 color: var(--putih);
 
                 & button {
-
+                    padding: 0;
                 }
                 & p:first-of-type {
                     font-family: var(--bebas);
