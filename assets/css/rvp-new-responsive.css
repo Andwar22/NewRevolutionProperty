@@ -1,0 +1,1185 @@
+@import url(/main/css/variables.css);
+
+
+/* ####################################################################################################################### */
+/* ####################################################### DEKSTOP ####################################################### */
+/* ####################################################################################################################### */
+@media screen and (min-width: 1024px) {
+    /* #region ============= GLOBAL ============= */
+    :root {
+        --maxPage: 1750px;
+    }
+    /* #endregion ========== GLOBAL ============= */
+}
+
+/* ###################################################################################################################### */
+/* ####################################################### TABLET ####################################################### */
+/* ###################################################################################################################### */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* #region ============= GLOBAL ============= */
+        :root {
+            --maxPage: 100%;
+        }
+
+        .subtitle {
+            font-size: 2.25rem;
+        }
+        .desc {
+            font-size: 1.15rem;
+        }
+    /* #endregion ========== GLOBAL ============= */
+
+    /* #region ============= NAVBAR ============= */
+        #navbar {
+            padding: 1rem 3rem;
+            background: var(--white);
+            box-shadow: 0 5px 15px #69696933;
+            
+            & .nav-menu {
+                position: fixed;
+                top: 4.2rem;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 3rem;
+                background-color: #000000e3;
+                opacity: 0;
+                pointer-events: none;
+                overflow: hidden;
+
+                & ul {
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    & li {
+                        list-style: none;
+
+                        & a {
+                            color: var(--putih);
+                            text-decoration: none;
+                            transition: var(--anim);
+
+                            &:is(:hover, :active) {
+                                color: var(--primary);
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .theme {
+                & label[for="nav-toggle"] {
+                    display: block;
+                }
+            }
+
+            & #nav-toggle:checked ~ .nav-menu {
+                opacity: 1;
+                pointer-events: all;
+            }
+            & #nav-toggle:checked ~ .theme label[for="nav-toggle"] svg:first-child {
+                display: none;
+            }
+            & #nav-toggle:checked ~ .theme label[for="nav-toggle"] svg:last-child {
+                display: block;
+            }
+        }
+    /* #endregion ========== NAVBAR ============= */
+    
+    /* #region ============= HEADER ============= */
+        header {
+            & .text-header {
+                & .tagline {
+                    height: 9rem;
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    /* #endregion ========== HEADER ============= */
+
+    /* #region ============= OPENING1 ============= */
+        #opening1 {
+            & .grid-opening1 {
+                grid-template-columns: 45% auto;
+                padding: 0 5%;
+
+                & .tea-pouch {
+                    & img {
+                        height: 90%;
+                    }
+                }
+
+                & .tea-glass {
+                    left: -10%;
+                    height: 50%;
+
+                    & p {
+                        max-width: 40%;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== OPENING1 ============= */
+
+    /* #region ============= OPENING2 ============= */
+        #opening2 {
+            overflow-x: hidden;
+            
+            & .pouch-left {
+                left: -6%;
+            }
+            & .pouch-right {
+                right: -6%;
+            }
+        }
+    /* #endregion ========== OPENING2 ============= */
+
+    /* #region ============= INFO PRODUK ============= */
+    #infoProduct {
+        grid-template-columns: auto 45%;
+        gap: 3rem;
+        padding: 5%;
+
+        & .img-info {
+            & :is(.jar-bottom, .jar-top) {
+                padding: 1rem;
+            }
+
+            & :is(.tea-leaves1, .tea-leaves2) {
+                width: 28%;
+            }
+            & .tea-leaves1 {
+                top: -3%;
+                left: -5%;
+            }
+            & .tea-leaves2 {
+                bottom: 12%;
+                right: -7%;
+            }
+        }
+    }
+    /* #endregion ========== INFO PRODUK ============= */
+
+    /* #region ============= PERBEDAAN ============= */
+        #perbedaan {
+            gap: 1rem;
+            padding: 0 5%;
+
+            & .wrap-perbedaan {
+                --sliderWidth: 400px;
+
+                align-items: flex-start;
+    
+                & .text-slider {
+                    width: calc(50% - 1rem);
+                    justify-content: flex-start;
+                    padding-top: calc(50% + 4rem);
+
+                    & svg {
+                        height: 24px;
+                        min-height: 24px;
+                    }
+                    & p {
+                        font-size: .9rem;
+                        padding-left: 1.15rem;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== PERBEDAAN ============= */
+
+    /* #region ============= KELEBIHAN ============= */
+    #kelebihan {
+        padding: 0 5%;
+        overflow: hidden;
+
+        & .wrap-kelebihan {
+            max-width: 75%;
+
+            & .minum-teh {
+                & img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                &::before {
+                    height: 70%;
+                }
+            }
+
+            & .manfaat:nth-child(1) {
+                top: 10%;
+                left: -17%;
+                width: 40%;
+
+                &::before {
+                    bottom: calc(-120% + -1.75rem);
+                    width: 50%;
+                    height: 120%;
+                }
+            }
+            & .manfaat:nth-child(2) {
+                top: 8%;
+                right: -16%;
+                width: 38%;
+
+                &::before {
+                    width: 85%;
+                }
+            }
+            & .manfaat:nth-child(3) {
+                left: -16%;
+                bottom: 20%;
+
+                &::before {
+                    top: calc(-220% + -1.5rem);
+                    width: 30%;
+                    height: 220%;
+                }
+            }
+            & .manfaat:nth-child(4) {
+                bottom: 22%;
+                right: -15%;
+
+                &::before {
+                    top: calc(-170% + -1.5rem);
+                    width: 80%;
+                    height: 170%;
+                }
+            }
+
+            & .leaf6, .leaf9 {
+                display: none;
+            }
+        }
+    }
+    /* #endregion ========== KELEBIHAN ============= */
+
+    /* #region ============= PROMO ============= */
+        #promo {
+            height: 40vh;
+            padding: 0 0 0 5%;
+
+            & .wrap-promo {
+                grid-template-columns: 1fr 1fr;
+
+                & .img-promo {
+                    & .promo-sticker {
+                        top: 10%;
+                        width: 50%;
+                    }
+                    & .promo-img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== PROMO ============= */
+
+    /* #region ============= VARIAN ============= */
+        #varian {
+            & .products {
+                & .carousel-products {
+                    .carousel-cell {
+                        width: 235px;
+                        height: 400px;
+                    }
+                }
+
+                & .wrap-desc-products {
+                    margin-top: 2rem;
+                    
+                    & .desc-products {
+                        max-width: 85%;
+
+                        & a {
+                            top: 0;
+                            font-size: 1rem;
+                        }
+                        & span:nth-of-type(2) {
+                            margin-top: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    /* #endregion ========== VARIAN ============= */
+
+    /* #region ============= TESTIMONI ============= */
+    #testimoni {
+        & .subtitle {
+            padding-left: 5%;
+        }
+        .testi-items {
+            padding: 0 5%;
+        }
+    }
+    /* #endregion ========== TESTIMONI ============= */
+
+    /* #region ============= HARGA ============= */
+        #harga {
+            padding: 10% 5% 0 5%;
+
+            & .wrap-product {
+                grid-template-columns: 1fr 1fr;
+                align-items: flex-start;
+                height: fit-content;
+                margin-top: 5rem;
+
+                & .harga-img {
+                    margin-top: 1rem;
+                    & .selected-img {
+                        width: 85%;
+                    }
+                }
+
+                & .harga-desc {
+                    gap: 1.25rem;
+    
+                    & .varian-nama {
+                        & p:nth-child(2) {
+                            font-size: 2.25rem;
+                        }
+                        & p:last-child {
+                            font-size: 1.5rem;
+                        }
+                    }
+    
+                    & .varian-select {
+                        & .wrap-select {
+                            grid-template-columns: 1fr 1fr;
+    
+                            & label {
+                                font-size: .9rem;
+                                padding: .65rem;
+                            }
+                        }
+                    }
+    
+                    & .varian-desc {
+                        & p:not(.varian-label) {
+                            font-size: 1rem;
+                            margin-bottom: 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    /* #endregion ========== HARGA ============= */
+
+    /* #region ============= PANDUAN ============= */
+        #panduan {
+            padding: 10% 5%;
+
+            & .subtitle {
+                font-size: 3rem;
+            }
+        }
+    /* #endregion ========== PANDUAN ============= */
+
+    /* #region ============= FOOTER ============= */
+        footer {
+            & .wrap-footer {
+                gap: 10%;
+
+                & .ft-left {
+                    width: 40%;
+    
+                    & svg {
+                        height: 40px;
+                    }
+                    & p {
+                        font-size: .9rem;
+                    }
+                }
+    
+                & .ft-right {
+                    gap: 2rem;
+    
+                    .ft-r-top {
+                        & div {
+                            gap: 10%;
+    
+                            & ul {
+                                & li {
+                                    font-size: .9rem;
+                                }
+                            }
+                        }
+                    }
+    
+                    .ft-r-bottom {
+                        & div {
+                            gap: 1rem;
+    
+                            & a {
+                                & img {
+                                    width: 50px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    /* #endregion ========== FOOTER ============= */
+}
+
+
+/* ##################################################################################################################### */
+/* ####################################################### HP ########################################################## */
+/* ##################################################################################################################### */
+@media screen and (max-width: 767px) {
+    /* #region ============= GLOBAL ============= */
+        :root {
+            --maxPage: 100%;
+        }
+
+        .subtitle {
+            font-size: 1.75rem;
+            text-align: center;
+        }
+        .desc {
+            font-size: 1rem;
+        }
+    /* #endregion ========== GLOBAL ============= */
+
+    /* #region ============= NAVBAR ============= */
+        #navbar {
+            padding: 1rem 1.5rem;
+            background: var(--white);
+            box-shadow: 0 5px 15px #69696933;
+
+            & .brand {
+                & svg {
+                    max-width: 135px;
+                    margin-top: .25rem;
+                }
+            }
+            
+            & .nav-menu {
+                position: fixed;
+                top: 4.2rem;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 2.5rem 1.5rem;
+                background-color: #000000e3;
+                opacity: 0;
+                pointer-events: none;
+                overflow: hidden;
+
+                & ul {
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    & li {
+                        list-style: none;
+
+                        & a {
+                            color: var(--putih);
+                            text-decoration: none;
+                            transition: var(--anim);
+
+                            &:is(:hover, :active) {
+                                color: var(--primary);
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .theme {
+                & label[for="nav-toggle"] {
+                    display: block;
+                }
+            }
+
+            & #nav-toggle:checked ~ .nav-menu {
+                opacity: 1;
+                pointer-events: all;
+            }
+            & #nav-toggle:checked ~ .theme label[for="nav-toggle"] svg:first-child {
+                display: none;
+            }
+            & #nav-toggle:checked ~ .theme label[for="nav-toggle"] svg:last-child {
+                display: block;
+            }
+        }
+    /* #endregion ========== NAVBAR ============= */
+
+    /* #region ============= HEADER ============= */
+        header {
+            overflow: hidden;
+            
+            & .text-header {
+                margin-bottom: 8rem;
+
+                & .tagline {
+                    height: 10.5rem;
+                    font-size: 2.5rem;
+
+                    & br {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== HEADER ============= */
+
+    /* #region ============= OPENING1 ============= */
+        #opening1 {
+            & .grid-opening1 {
+                display: flex;
+                flex-direction: column;
+                grid-template-columns: unset;
+                align-items: center;
+                gap: 2rem;
+                padding: 1.5rem;              
+                overflow: hidden;
+
+                & .tea-pouch {
+                    width: 90%;
+                }
+                & .tea-glass {
+                    bottom: 57%;
+                    left: 27%;
+                    height: 28%;
+
+                    & p {
+                        display: none;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== OPENING1 ============= */
+
+    /* #region ============= OPENING2 ============= */
+        #opening2 {
+            height: 90vh;
+
+            & .wrap-opening2 {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                max-width: 50%;
+                color: var(--black);
+                font-size: 1.5rem;
+                font-family: var(--go600);
+                text-align: center;
+                z-index: 5;
+
+                & span {
+                    color: var(--primary);
+                }
+            }
+
+            & .pouches {
+                width: 40%;
+    
+                & span {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+    
+            & .pouch-left {
+                & span {
+                    top: 15%;
+                    left: auto;
+                    right: 65%;
+    
+                    & img {
+                        filter: drop-shadow(5px 10px 10px #00000030);
+                    }
+                }
+                & .tea-apple {
+                    left: auto;
+                    right: 65%;
+                }
+                & .tea-earl {
+                    top: 35%;
+                    left: auto;
+                    right: 65%;
+                }
+                & .tea-berry {
+                    top: 55%;
+                }
+            }
+    
+            & .pouch-right {
+                & span {
+                    top: 15%;
+                    right: auto;
+                    left: 65%;
+    
+                    & img {
+                        filter: drop-shadow(-5px 10px 10px #00000030);
+                    }
+                }
+                & .tea-earl2 {
+                    right: auto;
+                    left: 65%;
+                }
+                & .tea-passion {
+                    top: 35%;
+                    right: auto;
+                    left: 65%;
+                }
+                & .tea-mango {
+                    top: 55%;
+                }
+            }
+        }
+    /* #endregion ========== OPENING2 ============= */
+
+    /* #region ============= INFO PRODUK ============= */
+        #infoProduct {
+            grid-template-columns: 1fr;
+            gap: 0;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            overflow: hidden;
+
+            & .img-info {
+                & :is(.jar-bottom, .jar-top) {
+                    padding: 2.5rem;
+                }
+                
+                & :is(.tea-leaves1, .tea-leaves2) {
+                    width: 25%;
+                }
+                & .tea-leaves1 {
+                    top: 5%;
+                    left: 0;
+                }
+                & .tea-leaves2 {
+                    bottom: 12%;
+                    right: 0;
+                }
+            }
+        }
+    /* #endregion ========== INFO PRODUK ============= */
+
+    /* #region ============= PERBEDAAN ============= */
+    #perbedaan {
+        align-items: unset;
+        gap: 1rem;
+        padding: 0 1.5rem;
+        margin-top: 10rem;
+        overflow: hidden;
+
+        & .text-perbedaan {
+            max-width: 100%;
+        }
+
+        & .wrap-perbedaan {
+            --sliderWidth: 100%;
+
+            position: relative;
+            align-items: flex-start;
+
+            & .text-slider {
+                top: calc(50% + 1rem);
+                width: 100%;
+                justify-content: flex-start;
+                gap: 1rem;
+
+                & svg {
+                    height: 25px;
+                }
+                & p {
+                    font-size: .85rem;
+                }
+            }
+            & .ours {
+                padding-right: 0;
+            }
+            & .others {
+                padding-left: 0;
+                opacity: 0;
+            }
+        }
+        
+        & .wrap-perbedaan.min {
+            & .ours {
+                transform: scale(1);
+                opacity: 0;
+            }
+            & .others {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        & .wrap-perbedaan.max {
+            & .others {
+                transform: scale(1);
+                opacity: 0;
+            }
+            & .ours {
+                transform: scale(1);
+            }
+        }
+    }
+    /* #endregion ========== PERBEDAAN ============= */
+
+    /* #region ============= KELEBIHAN ============= */
+        #kelebihan {
+            height: fit-content;
+            overflow: hidden;
+
+            & .wrap-kelebihan {
+                max-width: 90%;
+                padding-top: 0;
+                margin: 10rem 0 7rem 0;
+
+                & .minum-teh {
+                    width: 100%;
+                    height: auto;
+
+                    &::before {
+                        bottom: 0;
+                        height: 85%;
+                    }
+                }
+
+                & .manfaat {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: -1.5rem;
+                        transform: translateX(-50%);
+                        width: 8px;
+                        height: 8px;
+                        background-color: var(--grey);
+                        border-radius: 50%;
+                        outline: 2px solid var(--grey);
+                        outline-offset: 2px;
+                    }
+                    & p {
+                        font-size: .8rem;
+                    }
+                }
+                & .manfaat:nth-child(1) {
+                    top: -14%;
+                    left: 0;
+                    max-width: 160px;
+
+                    &::before {
+                        left: calc(20% - 1px);
+                        bottom: calc(-200% + -1.75rem);
+                        width: 30%;
+                        height: 200%;
+                    }
+                    &::after {
+                        left: 20%;
+                    }
+                }
+                & .manfaat:nth-child(2) {
+                    top: -16%;
+                    right: 0;
+                    max-width: 150px;
+                    text-align: right;
+
+                    &::before {
+                        right: calc(20% - 1px);
+                        bottom: calc(-125% + -1.75rem);
+                        width: 60%;
+                        height: 125%;
+                    }
+                    &::after {
+                        left: auto;
+                        right: 15%;
+                    }
+                }
+                & .manfaat:nth-child(3) {
+                    bottom: -5rem;
+                    left: 0;
+                    max-width: 160px;
+
+                    &::before {
+                        left: calc(10% - 1px);
+                        top: calc(-235% + -1.5rem);
+                        width: 40%;
+                        height: 235%;
+                    }
+                    &::after {
+                        left: 10%;
+                    }
+                }
+                & .manfaat:nth-child(4) {
+                    bottom: -6rem;
+                    right: 0;
+                    max-width: 155px;
+                    text-align: right;
+
+                    &::before {
+                        right: calc(20% - 1px);
+                        top: calc(-190% + -1.5rem);
+                        width: 50%;
+                        height: 190%;
+                    }
+                    &::after {
+                        left: auto;
+                        right: 15%;
+                    }
+                }
+
+                & .wrap-leaves {
+                    & .leaf1 {
+                        bottom: 3%;
+                        right: 15%;
+                        width: 25%;
+                    }
+                    & .leaf2 {
+                        bottom: 28%;
+                        left: 5%;
+                        width: 10%;
+                        z-index: 2;
+                    }
+                    & .leaf3 {
+                        bottom: 40%;
+                        right: 0;
+                        width: 14%;
+                    }
+                    & .leaf4 {
+                        top: 25%;
+                        width: 9%;
+                    }
+                    & .leaf5 {
+                        left: 0;
+                        width: 6%;
+                    }
+                    & .leaf6, .leaf7 {
+                        display: none;
+                    }
+                    & .leaf8 {
+                        right: 15%;
+                        width: 8%;
+                    }
+                    & .leaf9 {
+                        bottom: 5%;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== KELEBIHAN ============= */
+
+    /* #region ============= PROMO ============= */
+        #promo {
+            height: 100vh;
+            padding: 0 0 0 1.5rem;
+            background: linear-gradient(30deg, var(--primary) 0%, #2E8244 100%);
+
+            & .wrap-promo {
+                grid-template-columns: 1fr;
+                
+                & .text-promo {
+                    justify-content: flex-start;
+                    padding-top: 25%;
+                }
+
+                & .img-promo {
+                    position: relative;
+                    height: 100%;
+
+                    & .promo-sticker {
+                        top: -75%;
+                        left: 2%;
+                        width: 50%;
+                    }
+                    & .promo-img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== PROMO ============= */
+
+    /* #region ============= VARIAN ============= */
+        #varian {
+            & .varian-title {
+                padding: 0 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            & .products {
+                & .carousel-products {
+                    .carousel-cell {
+                        width: 210px;
+                        height: 350px;
+                    }
+                    & .flickity-prev-next-button {
+                        bottom: -17%;
+                    }
+                    & .flickity-prev-next-button.previous {
+                        left: 3%;
+                    }
+                    & .flickity-prev-next-button.next {
+                        right: 3%;
+                    }
+                }
+
+                & .wrap-desc-products {
+                    padding: 0 1.5rem;
+                    
+                    & .desc-products {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: .5rem;
+                        max-width: 100%;
+                        margin-top: 3rem;
+                        margin-bottom: 10rem;
+        
+                        & div {
+                            flex: 1;
+                        }
+                        & img {
+                            max-width: 80px;
+                        }
+                        & span:nth-of-type(1) {
+                            text-align: center;
+                        }
+                        & span:nth-of-type(2) {
+                            font-size: 1.75rem;
+                            text-align: center;
+                        }
+                        & a {
+                            font-size: 1rem;
+                            top: auto;
+                            left: 50%;
+                            bottom: -3rem;
+                            transform: translateX(-50%);
+                        }
+                        & p {
+                            font-size: 1rem;
+                            text-align: center;
+                            padding: 0 1.5rem;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    /* #endregion ========== VARIAN ============= */
+
+    /* #region ============= TESTIMONI ============= */
+        #testimoni {
+            & .subtitle {
+                color: var(--putih);
+                padding: 0 1.5rem;
+                margin-bottom: 3.5rem;
+            }
+
+            .testi-items {
+                padding: 0 2rem;
+
+                & .testi-text {
+                    padding: 2rem  1.5rem;
+                    margin-right: 1rem;
+                }
+
+                & .space {
+                    min-width: 4rem;
+                }
+            }
+            
+        }
+    /* #endregion ========== TESTIMONI ============= */
+
+    /* #region ============= HARGA ============= */
+        #harga {
+            position: relative;
+            height: fit-content;
+            padding: 8rem 1.5rem 0 1.5rem;
+            overflow: hidden;
+
+            & .wrap-sub {
+                margin-bottom: 0;
+            }
+
+            & .wrap-product {
+                display: flex;
+                grid-template-columns: unset;
+                flex-direction: column;
+                gap: 2rem;
+                height: fit-content;
+                margin-top: 5rem;
+
+                & .harga-img {
+                    & .selected-img {
+                        width: 70%;
+                    }
+
+                    & .varian-thumb {
+                        gap: 1.5rem;
+
+                        & label {
+                            width: calc(100% / 4 - 2rem);
+                        }
+                    }
+                }
+
+                & .harga-desc {
+                    gap: 1.25rem;
+
+                    & .varian-label {
+                        margin-bottom: .35rem;
+                    }
+
+                    & .varian-nama {
+                        & p {
+                            margin-bottom: 0;
+                        }
+                        & p:first-child {
+                            font-size: 1.15rem;
+                        }
+                        & p:nth-child(2) {
+                            font-size: 1.75rem;
+                        }
+                        & p:last-child {
+                            font-size: 1.35rem;
+                        }
+                    }
+
+                    & .varian-select {
+                        & .wrap-select {
+                            grid-template-columns: 1fr 1fr;
+                            gap: .5rem;
+
+                            & label {
+                                font-size: .9rem;
+                                text-align: center;
+                                padding: .75rem .5rem;
+                            }
+                        }
+                    }
+
+                    & .varian-desc {
+                        & p:not(.varian-label) {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    /* #endregion ========== HARGA ============= */
+
+    /* #region ============= PANDUAN ============= */
+        #panduan {
+            flex-direction: column;
+            padding: 30% 1.5rem;
+
+            & .subtitle {
+                font-size: 2.25rem;
+                margin-bottom: 2rem;
+            }
+
+            & .panduan-steps {
+                gap: 0;
+                width: 100%;
+                height: 100%;
+                padding: 3rem 1rem;
+                border-radius: 1.25rem;
+
+                &::before {
+                    opacity: .2;
+                }
+                &::after {
+                    display: none;
+                }
+
+                & .item-step {
+                    align-items: flex-start;
+                    margin-bottom: 2rem;
+
+                    & svg {
+                        width: 40px;
+                        min-width: 40px;
+                        height: 40px;
+                        margin-top: .2rem;
+                    }
+                    & p:first-child {
+                        font-size: .9rem;
+                        font-family: var(--go500);
+                        margin-bottom: .25rem;
+                    }
+                    & p:last-child {
+                        font-size: 1.1rem;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    /* #endregion ========== PANDUAN ============= */
+
+    /* #region ============= FOOTER ============= */
+        footer {
+            padding: 3rem 1.5rem 5rem 1.5rem;
+
+            & .wrap-footer {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
+                gap: 2rem;
+
+                & .ft-left {
+                    width: 100%;
+
+                    & svg {
+                        height: 35px;
+                        margin-bottom: 1rem;
+                    }
+                    & p {
+                        font-size: .9rem;
+
+                        &:last-child {
+                            position: absolute;
+                            left: 50%;
+                            bottom: 1rem;
+                            transform: translateX(-50%);
+                            margin-top: 0;
+                        }
+                    }
+                }
+
+                & .ft-right {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+
+                    .ft-r-top {
+                        & div {
+                            flex-wrap: wrap;
+                            gap: .5rem 1rem;
+
+                            & ul {
+                                width: calc(100% / 2 - 1rem);
+                            }
+                        }
+                    }
+
+                    .ft-r-bottom {
+                        & div {
+                            gap: 1rem;
+
+                            & a {
+
+                                & img {
+                                    width: 50px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    /* #endregion ========== FOOTER ============= */
+}

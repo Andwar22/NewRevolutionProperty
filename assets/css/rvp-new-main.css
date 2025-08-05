@@ -31,17 +31,18 @@
 
 /* #region ============= SCROLLBAR ============= */
     *::-webkit-scrollbar {
-        height: 20px;
+        height: 10px;
+        width: 8px;
     }
     *::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        margin: 0 1rem;
+        background: #fff;
+        margin: 0;
     }
     *::-webkit-scrollbar-thumb {
-        background-color: var(--green);
+        background-color: var(--primary);
         background: linear-gradient(to top, var(--primary) 0%, var(--primary) 60%);
-        border: 3.5px solid transparent;
-        border-radius: 9px;
+        border: 2px solid transparent;
+        border-radius: 10px;
         background-clip: content-box;
     }
 /* #endregion ========== SCROLLBAR ============= */
@@ -113,7 +114,295 @@
     }
 /* #endregion ========== CUSTOM BROKEN IMAGE ============= */
 
+/* #region ============= NAVBAR ============= */
+    #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        max-width: var(--maxPage);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 3rem;
+        margin-inline: auto;
+        background: transparent;
+        box-shadow: none;
+        transition: var(--anim);
+        z-index: 100;
+
+        & #nav-toggle {
+            display: none;
+        }
+        
+        & .brand, .theme {
+            max-width: 200px;
+        }
+
+        & .brand {
+            display: flex;
+            align-items: center;
+
+            & a {
+                text-decoration: none;
+            }
+            & svg {
+                max-width: 175px;
+                height: auto;
+                fill: var(--black);
+            }
+        }
+        
+        & .nav-menu {
+            display: flex;
+            justify-content: center;
+
+            & ul {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                padding: 0;
+                margin: 0;
+
+                & li {
+                    list-style: none;
+
+                    & a {
+                        color: var(--black);
+                        text-decoration: none;
+                        transition: var(--anim);
+
+                        &:is(:hover, :active) {
+                            color: var(--primary);
+                        }
+                    }
+                }
+            }
+        }
+
+        & .theme {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            & label[for="nav-toggle"] {
+                display: none;
+                width: 2.2rem;
+                height: 2.2rem;
+                cursor: pointer;
+
+                & svg {
+                    width: 100%;
+                    height: 100%;
+                    stroke: var(--black);
+
+                    &:last-child {
+                        display: none;
+                        stroke: var(--red);
+                    }
+                }
+            }
+
+            & .toggle-dark {
+                width: 3rem;
+                aspect-ratio: 16 / 9;
+                border-radius: 3rem;
+                overflow: hidden;
+
+                & #darkModeToggle {
+                    display: none;
+                }
+
+                & label {
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+
+                    & div {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(to top, #1ddffd, #10cae7);
+                        box-shadow: inset 0 0 4px #00000040;
+                        transition: var(--anim);
+                        z-index: 0;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 8%;
+                            transform: translateY(-50%);
+                            height: 75%;
+                            aspect-ratio: 1;
+                            background-color: var(--putih);
+                            border-radius: 50%;
+                            box-shadow: 0 0 8px #00000040;
+                            transition: var(--anim);
+                            z-index: 3;
+                        }
+                        #darkModeToggle:checked ~ &::before {
+                            left: 49%;
+                        }
+
+                        & span:first-child {
+                            position: absolute;
+                            left: -20%;
+                            bottom: -117%;
+                            aspect-ratio: 1;
+                            height: 150%;
+                            border-radius: 50%;
+                            background-color: var(--secondary);
+                            z-index: 1;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 65%;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                                background-color: var(--primary);
+                                transition: var(--anim);
+                            }
+                        }
+                        #darkModeToggle:checked ~ & span:first-child {
+                            background-color: #4a554c;
+                        }
+                        #darkModeToggle:checked ~ & span:first-child::after {
+                            background-color: #55775e;
+                        }
+                        & span:last-child {
+                            position: absolute;
+                            top: 39%;
+                            left: 70%;
+                            aspect-ratio: 1;
+                            height: 32%;
+                            border-radius: 50%;
+                            background-color: #fff679;
+                            box-shadow: 0 0 8px #fff679c4;
+                            transition: var(--anim);
+                            z-index: -1;
+                        }
+                        #darkModeToggle:checked ~ & span:last-child {
+                            top: 22%;
+                            left: 12%;
+                            background-color: #fefcda;
+                            box-shadow: 0 0 6px #fefcdac4;
+                        }
+                    }
+                    #darkModeToggle:checked ~ div {
+                        background: linear-gradient(to top, #a5a5a5, #939393);
+                    }
+                }
+            }
+        }
+    }
+/* #endregion ========== NAVBAR ============= */
+
+/* #region ============= HEADER ============= */
+    header {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        isolation: isolate;
+
+        & .hero {
+            position: absolute;
+            inset: 0;
+            background-image: url(https://rv-affiliate.azureedge.net/web-replika/headerBaru01.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        & .text {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: auto max-content;
+            align-items: flex-end;
+            padding: 0 3rem 5rem 3rem;
+
+            & .left {
+                color: var(--putih);
+
+                & button {
+
+                }
+                & p:first-of-type {
+                    font-family: var(--bebas);
+                    font-size: 5rem;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    margin-bottom: 0;
+                    text-shadow: 0 0 158x rgba(0,0,0,.75);
+                }
+                & p:last-child {
+                    font-size: 1.25rem;
+                    margin-bottom: 0;
+                    text-shadow: 0 0 10px rgba(0,0,0,.75);
+                }
+            }
+
+            & .right {
+                min-width: 200px;
+
+                & .visitors > div {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    min-height: 42px;
+
+                    & span {
+                        position: absolute;
+                        left: calc(1.5rem * var(--numb));
+                        display: block;
+                        height: 42px;
+                        aspect-ratio: 1;
+                        border: 3px solid #fff;
+                        border-radius: 50%;
+                        transition: left .3s ease;
+
+                        &:hover {
+                            left: calc(1.5rem * var(--numb) - .25rem);
+                        }
+                        & img {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        &:last-child {
+                            position: relative;
+                            overflow: hidden;
+
+                            &::before {
+                                content: '1k+';
+                                position: absolute;
+                                inset: 0;
+                                display: grid;
+                                place-items: center;
+                                color: #fff;
+                                font-size: .8rem;
+                                background-color: rgba(0,0,0,0.65);
+                                z-index: 5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+/* #endregion ========== HEADER ============= */
 
 
 
 
+
+
+/* #region ============= XXX ============= */
+    
+/* #endregion ========== XXX ============= */
