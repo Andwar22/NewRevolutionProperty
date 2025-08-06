@@ -50,8 +50,7 @@
       // === Ubah Style Navbar ===
       if (scrollPos > 70) {
         if (currentDevice === "desktop") {
-          navbar.style.padding = ".9rem 4rem";
-          // navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.5)";
+          // navbar.style.padding = ".9rem 4rem";
         }
         else if (currentDevice === "tablet") {
           // navbar.style.padding = "1rem 3rem";
@@ -62,8 +61,7 @@
       }
       else {
         if (currentDevice === "desktop") {
-          navbar.style.padding = "1.4rem 4rem";
-          // navbar.style.boxShadow = "none";
+          // navbar.style.padding = "1.4rem 4rem";
         }
         else if (currentDevice === "tablet") {
           // navbar.style.padding = "1rem 3rem";
@@ -80,7 +78,7 @@
         else {
           // Scroll ke atas
           navbar.style.top = "0";
-          navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.5)"
+          navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.25)"
         }
         lastScrollTop = scrollPos;
       }
