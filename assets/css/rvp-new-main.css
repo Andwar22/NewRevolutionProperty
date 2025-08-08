@@ -754,11 +754,12 @@
 
                     & img {
                         position: absolute;
-                        left: 20%;
+                        left: 25%;
                         bottom: 0;
                         display: block;
                         min-width: 110%;
                         width: auto;
+                        filter: drop-shadow(3px 0 20px rgba(255, 255, 255, .5));
                         z-index: 5;
                     }
                 }
@@ -772,7 +773,7 @@
                         width: 100%;
                         color: var(--putih);
                         padding: 1.25rem 1rem 1.25rem 8rem;
-                        background: linear-gradient(to right, var(--mainBg), hsl(from var(--red) h s l / .5), var(--red) 20%);
+                        background: linear-gradient(to right, hsl(from var(--red) h s 55), hsl(from var(--red) h s 45));
 
                         &:nth-child(2) {
                             width: calc(100% - 50px);
@@ -793,7 +794,7 @@
 
                             & i {
                                 font-size: 2.5rem;
-                                vertical-align: -10px;
+                                vertical-align: -9px;
                                 margin-right: 1rem;
                             }
                         }
@@ -803,7 +804,7 @@
                             left: calc(100% - 3px);
                             height: 100%;
                             width: auto;
-                            color: var(--red);
+                            color: #BE2727;
                         }
                     }
                 }
@@ -812,7 +813,11 @@
     }
 /* #endregion ========== KENAPA PROPERTY ============= */
 
-
+/* #region ============= REVOLUTION ============= */
+    #revolution {
+        background-color: var(--primary);
+    }
+/* #endregion ========== REVOLUTION ============= */
 
 
 
