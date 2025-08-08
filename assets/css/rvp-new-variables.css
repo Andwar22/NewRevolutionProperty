@@ -7,47 +7,72 @@
         /* #endregion ========== FONTS ============= */
 
         /* #region ============= DEFAULT COLOR ============= */
-            --clr200: #8c84ff; /* light +30 */
-            --clr200: #7b72ff; /* light +20 */
-            --clr300: #6b61ff; /* light +10 */
-            --clr400: #5b50ff; /* default */
-            --clr500: #3b2eff; /* dark +10 */
-            --clr600: #1c0dfe; /* dark +20 */
-            --clr600: #0e00ea; /* dark +30 */
+            /*primary, sesuaikan turunan*/
+            --clr100: hsl(from var(--clr400) h s 90);
+            --clr200: hsl(from var(--clr400) h s 80);
+            --clr300: hsl(from var(--clr400) h s 70);
+            --clr400: #004262; /* default  */
+            --clr500: hsl(from var(--clr400) h s 60);
+            --clr600: hsl(from var(--clr400) h s 50);
+            --clr700: hsl(from var(--clr400) h s 40);
 
             --primary: var(--clr400);
-            --primary-hover: var(--clr500);
-            --primary-active: var(--clr600);
-            --primary-disabled: var(--clr200);
+            --primary-trans: hsl(from var(--clr400) h s l / .15);
 
+            /* Base */
+            --mainBg: #eef8fd;
             --white: #ffffff;
             --black: #212529;
             --grey: #6A6A6A;
             --soft-grey: #ededed;
-            --red: #f44336;
-            --green: #4caf50;
-            --orange: #ff9800;
-            --yellow: #ffeb3b;
             --border: #e1e1e1;
 
+            /*statis*/
             --putih: #ffffff;
             --hitam: #212529;
             --garis: #e1e1e1;
-            --shadow: #00000025;
 
-            --anim: .25s ease;
+            /* Status */
+            --red: #D63939;
+            --green: #2FB344;
+            --orange: #F59F00;
+            --blue: #066FD1;
+            --yellow: #ffeb3b;
+            --gold: #EFB812;
+
+            /* Text */
+            --fontWhite: #ffffff;
+            --fontBlack: #1f2937;
+            --fontMuted: #6b7280;
+            --boxShadow: 112, 101, 240; /*rgb from default color*/
+
+            /*others*/
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --anim: .15s ease;
         /* #endregion ========== DEFAULT COLOR ============= */
     }
 
     /* #region ============= DARK COLOR ============= */
         body.dark {
-            --white: #212529 !important;
-            --black: #ffffff !important;
-            --grey: #aaaaaa !important;
-            --soft-grey: #3a3e44 !important;
-            --line: #4a4a4a !important;
+            --clr400: #0c7bb2 !important;
+            --primary: var(--clr400);
+            --primary-trans: hsl(from var(--clr400) h s l / .15);
+            
+            /* Base */
+            --mainBg: #001824;
+            --white: #212529;
+            --black: #ffffff;
+            --grey: #aaaaaa;
+            --soft-grey: #3a3e44;
+            --border: #4a4a4a;
 
-            --shadow: #00000090 !important;
+            /* Text */
+            --fontWhite: #f9fafb;
+            --fontBlack: #ffffff;
+            --fontMuted: #94a3b8;
+
+            /*others*/
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
     /* #endregion ========== DARK COLOR ============= */
 /* #endregion ========== VARIABLES ============= */

@@ -8,8 +8,9 @@
         scroll-behavior: smooth;
     }
     body {
+        color: var(--fontBlack);
         font-family: var(--outfit);
-        background-color: #eef8fd;
+        background-color: var(--mainBg);
     }
     :target {
         scroll-margin-block: 0 !important;
@@ -19,22 +20,23 @@
         max-width: var(--maxPage);
         min-height: 100vh;
         margin-inline: auto;
+        border-bottom: 2px dashed var(--border);
     }
     .subtitle {
-        color: #004262;
+        color: var(--primary);
         font-family: var(--bebas);
-        font-size: 3.25rem;
+        font-size: 4rem;
         font-weight: 600;
         letter-spacing: 2px;
         text-transform: capitalize;
+        margin-bottom: .5rem;
 
         & span {
             color: var(--primary);
         }
     }
     .desc {
-        color: var(--black);
-        font-size: 1.15rem;
+        font-size: 1.25rem;
     }
 /* #endregion ========== GLOBAL ============= */
 
@@ -69,7 +71,7 @@
         border: none;
         outline: none;
         color: var(--putih);
-        background-color: var(--black);
+        background-color: var(--primary);
         border-radius: 50%;
         box-shadow: 2px 2px 8px var(--shadow);
         transform: scale(0);
@@ -95,11 +97,11 @@
 /* #region ============= CUSTOM SELECTION COLOR ============= */
     ::selection {
         color: var(--putih);
-        background: var(--primary);
+        background: var(--green);
     }
     ::-moz-selection {
         color: var(--putih);
-        background: var(--primary);
+        background: var(--green);
     }
 /* #endregion ========== CUSTOM SELECTION COLOR ============= */
 
@@ -157,7 +159,7 @@
             & a {
                 display: grid;
                 place-items: center;
-                color: var(--black);
+                color: var(--fontBlack);
                 text-decoration: none;
             }
             & svg {
@@ -335,7 +337,7 @@
         position: relative;
         width: 100%;
         height: 100vh;
-        background-color: #004262;
+        background-color: var(--primary);
         isolation: isolate;
 
         & .hero {
@@ -394,7 +396,7 @@
                         left: .5rem;
                         display: grid;
                         place-items: center;
-                        color: var(--grey);
+                        color: var(--primary);
                         font-size: 1.75rem;
                         height: 75%;
                         aspect-ratio: 1;
@@ -418,7 +420,7 @@
                 }
                 & p:first-of-type {
                     font-family: var(--bebas);
-                    font-size: 5.5rem;
+                    font-size: 6rem;
                     font-weight: 700;
                     line-height: 1.1;
                     letter-spacing: 2px;
@@ -474,7 +476,7 @@
                                 overflow: hidden;
 
                                 &::before {
-                                    content: '1k+';
+                                    content: '3k+';
                                     position: absolute;
                                     inset: 0;
                                     display: grid;
@@ -496,27 +498,173 @@
 /* #region ============= TENTANG KAMI ============= */
     #tentang {
         display: grid;
-        grid-template-columns: 40% auto;
-        justify-content: center;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
-        gap: 3rem;
-        padding: 5rem 6%;
+        gap: 4rem;
+        padding: 5rem 8%;
+        margin-top: 5rem;
 
         & .images {
             max-width: 100%;
-            border-radius: 1rem;
-            overflow: hidden;
 
             & img {
                 width: 100%;
                 height: auto;
             }
         }
+
+        & .text {
+            & .top {
+                margin-bottom: 3rem;
+
+                & p:first-child {
+                    font-family: var(--bebas);
+                    font-size: 1.75rem;
+                    line-height: 1;
+                    letter-spacing: 2px;
+                    margin-bottom: 0;
+                }
+            }
+            & .info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+
+                & > div {
+                    display: flex;
+                    flex-direction: column;
+
+                    & span:first-child {
+                        color: var(--primary);
+                        font-family: var(--bebas);
+                        font-size: 2.5rem;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        line-height: 1;
+                    }
+                }
+                & a {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    height: 60px;
+                    min-width: 235px;
+                    color: var(--putih);
+                    text-decoration: none;
+                    padding: .5rem;
+                    background: var(--primary);
+                    border-radius: 3rem;
+                    cursor: pointer;
+                    
+                    & i {
+                        position: absolute;
+                        left: .5rem;
+                        display: grid;
+                        place-items: center;
+                        color: var(--primary);
+                        font-size: 1.75rem;
+                        height: 75%;
+                        aspect-ratio: 1;
+                        background-color: var(--putih);
+                        border-radius: 50%;
+                        transition: var(--anim);
+                    }
+                    &:hover i {
+                        left: calc(100% - 3.25rem);
+                    }
+                    & span {
+                        font-size: 1.15rem;
+                        font-weight: 600;
+                        text-transform: capitalize;
+                        padding-left: 3.5rem;
+                        transition: var(--anim);
+                    }
+                    &:hover span {
+                        padding-left: .75rem;
+                    }
+                }
+            }
+        }
     }
 /* #endregion ========== TENTANG KAMI ============= */
 
 /* #region ============= KENAPA PROPERTY ============= */
-    
+    #kenapa {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 8%;
+
+        & .wrap {
+            position: relative;
+            display: grid;
+            grid-template-columns: 60% auto;
+            align-items: flex-end;
+            min-height: 500px;
+            background-color: var(--primary);
+            border-radius: 2rem;
+            border-bottom-left-radius: 0;
+            isolation: isolate;            
+            
+            & .content {
+                height: 100%;
+                padding: 2rem 0 3.75rem 3rem;
+
+                & .subtitle {
+                    color: var(--putih);
+                }
+                & .text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    color: var(--hitam);
+                    
+                    & div {
+                        position: relative;
+                        padding: 1.25rem;
+                        background-color: var(--putih);
+                        border-radius: 1rem;
+                        isolation: isolate;
+
+                        & span:first-child {
+                            display: block;
+                            color: var(--primary);
+                            font-family: var(--bebas);
+                            font-size: 1.75rem;
+                            font-weight: 600;
+                            line-height: 1;
+                            letter-spacing: 2px;
+                            margin-bottom: .25rem;
+                        }
+                        & i {
+                            position: absolute;
+                            top: 1rem;
+                            right: 1rem;
+                            color: var(--primary);
+                            font-size: 5rem;
+                            pointer-events: none;
+                            opacity: .15;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+            & .img {
+                height: 100%;
+
+                & img {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: auto;
+                    height: 111.6%;
+                    border-bottom-right-radius: 2rem;
+                    z-index: -1;
+                }
+            }
+        }
+    }
 /* #endregion ========== KENAPA PROPERTY ============= */
 
 
