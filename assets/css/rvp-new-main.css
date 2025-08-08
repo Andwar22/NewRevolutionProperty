@@ -503,7 +503,7 @@
             color: var(--putih);
             text-transform: capitalize;
             padding: 0 1rem;
-            background-color: var(--primary);
+            background: linear-gradient(30deg, var(--primary), hsl(from var(--primary) h s 30), var(--primary));
             overflow: hidden;
 
             & .list {
@@ -735,13 +735,17 @@
                 max-width: 70%;
                 margin: 0 auto;
                 text-align: center;
+
+                & .subtitle {
+                    margin-bottom: .25rem;
+                }
             }
 
             & .kendala-item {
                 display: grid;
                 grid-template-columns: max-content auto;
                 align-items: flex-end;
-                margin: 5rem 10rem 0 5rem;
+                margin: 5rem 10rem 0 4rem;
 
                 & .img {
                     position: relative;
@@ -753,9 +757,9 @@
                         left: 25%;
                         bottom: 0;
                         display: block;
-                        min-width: 110%;
+                        min-width: 108%;
                         width: auto;
-                        filter: drop-shadow(3px 0 20px rgba(255, 255, 255, .5));
+                        filter: drop-shadow(3px 0 20px hsl(from var(--white) h s l / .5));
                         z-index: 5;
                     }
                 }
@@ -768,7 +772,7 @@
                         position: relative;
                         width: 100%;
                         color: var(--putih);
-                        padding: 1.25rem 1rem 1.25rem 8rem;
+                        padding: 1.5rem 1rem 1.5rem 11.5rem;
                         background: linear-gradient(to right, hsl(from var(--red) h s 55), hsl(from var(--red) h s 45));
 
                         &:nth-child(2) {
@@ -783,16 +787,20 @@
                         &:nth-child(5) {
                             width: calc(100% - 200px);
                         }
-                        & span {
+                        & span:first-child {
+                            position: absolute;
+                            top: 50%;
+                            left: 7.5rem;
+                            transform: translateY(-50%);
+                            font-family: var(--bebas);
+                            font-size: 3rem;
+                            font-weight: 600;
+                            line-height: 1.2;
+                        }
+                        & span:nth-child(2) {
                             display: block;
                             font-size: 1.25rem;
                             font-weight: 600;
-
-                            & i {
-                                font-size: 2.5rem;
-                                vertical-align: -9px;
-                                margin-right: 1rem;
-                            }
                         }
                         & svg {
                             position: absolute;
@@ -806,12 +814,46 @@
                 }
             }
         }
+
+        & .solusi {
+            margin: 10rem 0 0 0;
+        }
     }
 /* #endregion ========== KENAPA PROPERTY ============= */
 
 /* #region ============= REVOLUTION ============= */
     #revolution {
+        position: relative;
         background-color: var(--primary);
+        isolation: isolate;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, var(--mainBg) 10%, hsl(from var(--mainBg) h s 50 / .25));
+            z-index: -1;
+        }
+        & .building {
+            position: relative;
+            height: 100vh;
+            isolation: isolate;
+
+            & img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center bottom;
+                z-index: -1;
+            }
+        }
+        & .revo-desc {
+            padding: 12rem 8%;
+        }
     }
 /* #endregion ========== REVOLUTION ============= */
 
