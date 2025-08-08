@@ -155,3 +155,10 @@
     });
   });
 // #endregion ========== NAVBAR MOBILE =============
+
+// #region ============= GET YEAR =============
+  function getYear() {
+    return new Date().getFullYear();
+  }
+  document.getElementById("year").textContent = getYear();
+// #endregion ========== GET YEAR =============
