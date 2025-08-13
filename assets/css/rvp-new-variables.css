@@ -11,13 +11,14 @@
             --clr100: hsl(from var(--clr400) h s 90);
             --clr200: hsl(from var(--clr400) h s 80);
             --clr300: hsl(from var(--clr400) h s 70);
-            --clr400: #004262; /* default  */
+            --clr400: #4357AD; /* default  */
             --clr500: hsl(from var(--clr400) h s 60);
             --clr600: hsl(from var(--clr400) h s 50);
             --clr700: hsl(from var(--clr400) h s 40);
 
             --primary: var(--clr400);
             --primary-trans: hsl(from var(--clr400) h s l / .15);
+            --secondary: #f4d7b5;
 
             /* Base */
             --mainBg: #eef8fd;

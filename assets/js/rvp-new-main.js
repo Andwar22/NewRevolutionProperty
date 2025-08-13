@@ -50,7 +50,8 @@
       // === Ubah Style Navbar ===
       if (scrollPos > 70) {
         if (currentDevice === "desktop") {
-          // navbar.style.padding = ".9rem 4rem";
+          navbar.style.background = "var(--white)";
+          navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.25)"
         }
         else if (currentDevice === "tablet") {
           // navbar.style.padding = "1rem 3rem";
@@ -61,7 +62,8 @@
       }
       else {
         if (currentDevice === "desktop") {
-          // navbar.style.padding = "1.4rem 4rem";
+          navbar.style.background = "transparent";
+          navbar.style.boxShadow = "none"
         }
         else if (currentDevice === "tablet") {
           // navbar.style.padding = "1rem 3rem";
@@ -73,12 +75,10 @@
         if (scrollPos > lastScrollTop && scrollPos > scrollThreshold) {
           // Scroll ke bawah
           navbar.style.top = "-5rem";
-          navbar.style.boxShadow = "none"
         }
         else {
           // Scroll ke atas
           navbar.style.top = "0";
-          navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.25)"
         }
         lastScrollTop = scrollPos;
       }
@@ -155,6 +155,27 @@
     });
   });
 // #endregion ========== NAVBAR MOBILE =============
+
+// #region ============= PERBEDAAN =============
+  const slider = document.querySelector(".slider-divider input");
+  const shrink = document.querySelector(".img-shrink");
+  const full = document.querySelector(".img-full");
+  const handle = document.querySelector(".drag-handle");
+  const activeSide = document.querySelector(".wrap-perbedaan");
+
+  if (slider && shrink && full && handle && activeSide) {
+    slider.addEventListener("input", () => {
+      let sliderVal = parseInt(slider.value, 10);
+
+      shrink.style.width = sliderVal + "%";
+      full.style.width = (100 - sliderVal) + "%";
+      handle.style.left = sliderVal + "%";
+
+      activeSide.classList.toggle("min", sliderVal <= 30);
+      activeSide.classList.toggle("max", sliderVal >= 70);
+    });
+  }
+// #endregion ========== PERBEDAAN =============
 
 // #region ============= GET YEAR =============
   function getYear() {
