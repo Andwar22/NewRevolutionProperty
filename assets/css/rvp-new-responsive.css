@@ -7,7 +7,7 @@
 @media screen and (min-width: 1024px) {
     /* #region ============= GLOBAL ============= */
     :root {
-        --maxPage: 1750px;
+        --maxPage: 2500px;
     }
     /* #endregion ========== GLOBAL ============= */
 }

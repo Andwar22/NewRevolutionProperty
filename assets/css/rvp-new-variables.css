@@ -2,8 +2,8 @@
 /* #region ============= FONT & COLOR ============= */
     :root {
         /* #region ============= FONTS ============= */
-            --bebas: "Bebas Neue", sans-serif;
-            --outfit: "Outfit", sans-serif;
+            --fontMain: "Fraunces", serif;
+            --fontSecondary: "Urbanist", sans-serif;
         /* #endregion ========== FONTS ============= */
 
         /* #region ============= DEFAULT COLOR ============= */
@@ -18,7 +18,7 @@
 
             --primary: var(--clr400);
             --primary-trans: hsl(from var(--clr400) h s l / .15);
-            --secondary: #f4d7b5;
+            --secondary: #fae2c7;
 
             /* Base */
             --mainBg: #eef8fd;

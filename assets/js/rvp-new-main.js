@@ -50,6 +50,7 @@
       // === Ubah Style Navbar ===
       if (scrollPos > 70) {
         if (currentDevice === "desktop") {
+          navbar.style.padding = "1rem 4rem";
           navbar.style.background = "var(--white)";
           navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.25)"
         }
@@ -62,6 +63,7 @@
       }
       else {
         if (currentDevice === "desktop") {
+          navbar.style.padding = "2rem 4rem";
           navbar.style.background = "transparent";
           navbar.style.boxShadow = "none"
         }
@@ -87,30 +89,30 @@
 // #endregion ========== NAVBAR CONTROL ONSCROLL =============
 
 // #region ============= TOGGLE DARK MODE =============
-  document.addEventListener("DOMContentLoaded", function() {
-    // Mendapatkan elemen checkbox
-    const darkModeToggle = document.getElementById("darkModeToggle");
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   // Mendapatkan elemen checkbox
+  //   const darkModeToggle = document.getElementById("darkModeToggle");
 
-    // Memeriksa apakah dark mode sudah disimpan di local storage sebelumnya
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
+  //   // Memeriksa apakah dark mode sudah disimpan di local storage sebelumnya
+  //   const isDarkMode = localStorage.getItem("darkMode") === "true";
 
-    // Mengatur status dark mode berdasarkan data di local storage
-    if (isDarkMode) {
-      document.body.classList.add("dark");
-      darkModeToggle.checked = true;
-    }
+  //   // Mengatur status dark mode berdasarkan data di local storage
+  //   if (isDarkMode) {
+  //     document.body.classList.add("dark");
+  //     darkModeToggle.checked = true;
+  //   }
 
-    // Fungsi untuk menangani perubahan status checkbox
-    function toggleDarkMode() {
-      // Tambahkan atau hilangkan class 'dark' pada <body>
-      document.body.classList.toggle("dark");
-      // Simpan status dark mode di local storage
-      localStorage.setItem("darkMode", darkModeToggle.checked);
-    }
+  //   // Fungsi untuk menangani perubahan status checkbox
+  //   function toggleDarkMode() {
+  //     // Tambahkan atau hilangkan class 'dark' pada <body>
+  //     document.body.classList.toggle("dark");
+  //     // Simpan status dark mode di local storage
+  //     localStorage.setItem("darkMode", darkModeToggle.checked);
+  //   }
 
-    // Tambahkan event listener untuk memantau perubahan pada checkbox
-    darkModeToggle.addEventListener("change", toggleDarkMode);
-  });
+  //   // Tambahkan event listener untuk memantau perubahan pada checkbox
+  //   darkModeToggle.addEventListener("change", toggleDarkMode);
+  // });
 // #endregion ======= TOGGLE DARK MODE =============
 
 // #region ============= NAVBAR MOBILE =============
@@ -156,6 +158,52 @@
   });
 // #endregion ========== NAVBAR MOBILE =============
 
+// #region ============= HEADER =============
+  const HeroBuild = document.querySelector('.hero-building');
+  const HeroTop = document.querySelector('.hero-top');
+
+  const headerTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#header",
+      start: "top top",
+      end: "+=100%",
+      scrub: true
+    }
+  });
+
+  headerTL.to(HeroBuild, { top: "-3rem" })
+          .to(HeroTop, { top: "-3rem" }, "<")
+// #endregion ========== HEADER =============
+
+// #region ============= TENTANG =============
+  const box1 = document.querySelector('#tentang .images div:first-child');
+  const box2 = document.querySelector('#tentang .images div:nth-child(2)');
+  const box3 = document.querySelector('#tentang .images div:nth-child(3)');
+  const box4 = document.querySelector('#tentang .images div:last-child');
+  const box1Title = document.querySelector('#tentang .images div:first-child span');
+  const box2Title = document.querySelector('#tentang .images div:nth-child(2) span');
+  const box3Title = document.querySelector('#tentang .images div:nth-child(3) span');
+  const box4Title = document.querySelector('#tentang .images div:last-child span');
+
+  const aboutTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#header",
+      start: "bottom center",
+      end: "+=55% center",
+      scrub: true
+    }
+  });
+
+  aboutTL.from(box1, { left: "-4rem", bottom: "-3rem", opacity: 0, duration: 6 })
+         .from(box2, { right: "-3rem", bottom: "-2rem", opacity: 0, duration: 6 }, "<")
+         .from(box3, { left: "-3rem", bottom: "-5rem", opacity: 0, duration: 6 }, "<")
+         .from(box4, { right: "-3rem", bottom: "-5rem", opacity: 0, duration: 6 }, "<")
+         .to(box1Title, { bottom: "1.5rem", opacity: 1, duration: 4 })
+         .to(box2Title, { top: "1rem", opacity: 1, duration: 4 })
+         .to(box3Title, { top: "1rem", opacity: 1, duration: 4 })
+         .to(box4Title, { bottom: "1.5rem", opacity: 1, duration: 2 })
+// #endregion ========== TENTANG =============
+
 // #region ============= PERBEDAAN =============
   const slider = document.querySelector(".slider-divider input");
   const shrink = document.querySelector(".img-shrink");
@@ -183,3 +231,11 @@
   }
   document.getElementById("year").textContent = getYear();
 // #endregion ========== GET YEAR =============
+
+
+
+
+
+// #region ============= XXXX =============
+
+// #endregion ========== XXXX =============
