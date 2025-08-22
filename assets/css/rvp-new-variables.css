@@ -11,7 +11,7 @@
             --clr100: hsl(from var(--clr400) h s 90);
             --clr200: hsl(from var(--clr400) h s 80);
             --clr300: hsl(from var(--clr400) h s 70);
-            --clr400: #4357AD; /* default  */
+            --clr400: #5570D1; /* default  */
             --clr500: hsl(from var(--clr400) h s 60);
             --clr600: hsl(from var(--clr400) h s 50);
             --clr700: hsl(from var(--clr400) h s 40);
@@ -45,7 +45,7 @@
             --fontWhite: #ffffff;
             --fontBlack: #1f2937;
             --fontMuted: #6b7280;
-            --boxShadow: 112, 101, 240; /*rgb from default color*/
+            --boxShadow: 85, 112, 209; /*rgb from default color*/
 
             /*others*/
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
