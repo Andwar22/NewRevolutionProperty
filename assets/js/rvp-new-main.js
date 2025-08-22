@@ -167,7 +167,8 @@
       trigger: "#header",
       start: "top top",
       end: "+=100%",
-      scrub: true
+      scrub: true,
+      invalidateOnRefresh: true
     }
   });
 
@@ -204,6 +205,21 @@
          .to(box4Title, { bottom: "1.5rem", opacity: 1, duration: 2 })
 // #endregion ========== TENTANG =============
 
+// #region ============= KENAPA =============
+  const alasan = document.querySelector('#kenapa .alasan');
+
+  const alasanTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#tentang",
+      start: "bottom center",
+      end: "+=55% center",
+      scrub: true
+    }
+  });
+
+  alasanTL.from(alasan, { transform: "scale(.75)", opacity: 0 })
+// #endregion ========== KENAPA =============
+
 // #region ============= PERBEDAAN =============
   const slider = document.querySelector(".slider-divider input");
   const shrink = document.querySelector(".img-shrink");
@@ -224,6 +240,42 @@
     });
   }
 // #endregion ========== PERBEDAAN =============
+
+// #region ============= HISTORY =============
+  const timelineTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".timeline",
+      start: "top top",
+      end: "+=500%", 
+      scrub: true,
+      pin: true
+    }
+  });
+
+  const items = document.querySelectorAll('.history .timeline .item');
+  const dotsLine = document.querySelector('.history .timeline .dots .line');
+  const dots = document.querySelectorAll('.history .timeline .dots span');
+
+  const totalItems = items.length;
+
+  items.forEach((item, i) => {
+    if (i === 0) return; // item pertama tidak animasi line
+
+    // animasi item masuk
+    timelineTL.from(item, {
+      bottom: "-100%",
+      opacity: 0,
+      duration: 1
+    }, "+=2");
+
+    // animasi line bertambah sesuai progress
+    const progress = (i / (totalItems - 1)) * 100;
+    timelineTL.to(dotsLine, { height: progress + "%" }, "<");
+
+    // animasi dot berubah warna
+    timelineTL.to(dots[i], { backgroundColor: "yellow", scale: "1", duration: 2 }, "<");
+  });
+// #endregion ========== HISTORY =============
 
 // #region ============= GET YEAR =============
   function getYear() {

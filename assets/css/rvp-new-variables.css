@@ -21,7 +21,7 @@
             --secondary: #fae2c7;
 
             /* Base */
-            --mainBg: #eef8fd;
+            --mainBg: hsl(from var(--clr400) h s 95);
             --white: #ffffff;
             --black: #212529;
             --grey: #6A6A6A;
