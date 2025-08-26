@@ -277,12 +277,51 @@
   });
 // #endregion ========== HISTORY =============
 
+// #region ============= COUNTER PROMO =============
+  function getMonthlyCountdown() {
+    const now = new Date();
+
+    // Tanggal 1 bulan berikutnya jam 00:00:00
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0);
+
+    const diff = nextMonth - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    return { days, hours, minutes, seconds };
+  }
+
+  //buat agar 2 digit
+  function formatNumber(num) {
+    return String(num).padStart(2, "0");
+  }
+
+  function updateTimer() {
+    const countdown = getMonthlyCountdown();
+    document.getElementById("promoDays").textContent = `${formatNumber(countdown.days)}`;
+    document.getElementById("promoHours").textContent = `${formatNumber(countdown.hours)}`;
+    document.getElementById("promoMinutes").textContent = `${formatNumber(countdown.minutes)}`;
+    document.getElementById("promoSeconds").textContent = `${formatNumber(countdown.seconds)}`;
+  }
+
+  // Jalankan langsung pertama kali
+  updateTimer();
+
+  // Update tiap detik
+  setInterval(updateTimer, 1000);
+// #endregion ========== COUNTER PROMO =============
+
 // #region ============= GET YEAR =============
   function getYear() {
     return new Date().getFullYear();
   }
   document.getElementById("year").textContent = getYear();
 // #endregion ========== GET YEAR =============
+
+
 
 
 
