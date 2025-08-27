@@ -266,7 +266,7 @@
       bottom: "-100%",
       opacity: 0,
       duration: 1
-    }, "+=2");
+    }, "+=1");
 
     // animasi line bertambah sesuai progress
     const progress = (i / (totalItems - 1)) * 100;
@@ -313,6 +313,44 @@
   // Update tiap detik
   setInterval(updateTimer, 1000);
 // #endregion ========== COUNTER PROMO =============
+
+// #region ============= TESTIMONI =============
+  const photosWrap = document.querySelector('#testimoni .photos .wrap');
+  const commentsArea = document.querySelectorAll('#testimoni .comments');
+
+  const testiTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".promo",
+      start: "bottom center",
+      end: "+=100%",
+      scrub: true
+    }
+  });
+  testiTL.to(photosWrap, { opacity: .2, duration: 6, delay: 4 })
+         .from(commentsArea, { y: "100vh", opacity: 0, duration: 10, ease: "power3.out" })
+
+  let commentItem = gsap.utils.toArray(".review");
+
+  commentItem.forEach((container, i) => {
+    let localItems = container.querySelectorAll(".review-item"),
+    distance = () => {
+      let lastItemBounds = localItems[localItems.length-1].getBoundingClientRect(),
+          containerBounds = container.getBoundingClientRect();
+      return Math.max(0, lastItemBounds.right - containerBounds.right);
+    };
+    gsap.to(container, {
+      x: () => -distance(),
+      scrollTrigger: {
+        trigger: "#testimoni",
+        start: "top top",
+        end: () => "+=" + distance(),
+        pin: true,
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    })
+  });
+// #endregion ========== TESTIMONI =============
 
 // #region ============= GET YEAR =============
   function getYear() {
