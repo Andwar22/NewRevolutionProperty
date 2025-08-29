@@ -391,7 +391,7 @@
                 </div>
             </div>
 
-            <div class="history">
+            <div id="history" class="history">
                 <div class="title">
                     <p class="subtitle">Sejarah singkat</p>
                     <p class="desc">
@@ -686,7 +686,7 @@
             </div>
         </div>
 
-        <div class="promo">
+        <div id="penawaran" class="promo">
             <div class="promo-head">
                 <div class="title">
                     <p class="subtitle">penawaran spesial<br>hanya untukmu</p>
@@ -844,7 +844,6 @@
         <div class="comments">
             <div class="title">
                 <p class="subtitle">Jangan cuma dengar dari kami, yuk lihat apa kata mereka!</p>
-
             </div>
             <div class="review">
                 <div class="space"></div>
@@ -989,20 +988,110 @@
     </section>
 
     <section id="hubungi">
+        <div class="kontak-area">
+            <div class="office-map"></div>
+            <div class="kontak-list">
+                <div class="address">
+                    <p>Office Address</p>
+                    <p>Jl. Tambak Sari No.1, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228</p>
+                    <p><i class="ci-clock"></i>Senin - Jumat, Pukul 09:00 - 17.00</p>
+                    <p><i class="ci-email-lock"></i>0895-4334-3933-3</p>
+                    <p><i class="ci-email"></i>info@rvproperty.co.id</p>
+                </div>
+                <div class="socmed">
+                    <div>
+                        <a href="https://www.facebook.com/p/Revolution-Property-Indonesia-100084794607700/" target="_blank"><i class="ci-love"></i></a>
+                        <a href="https://www.instagram.com/rvproperty.official/" target="_blank"><i class="ci-love"></i></a>
+                        <a href="https://www.tiktok.com/@rvpropertybali" target="_blank"><i class="ci-love"></i></a>
+                    </div>
+                    <a href="https://maps.app.goo.gl/AhoBJeGzdyxd3Eg28" target="_blank">Buka Maps <i class="ci-navigation"></i></a>
+                </div>
+            </div>
+        </div>
 
+        <div class="form-area">
+            <div class="title">
+                <p class="subtitle">hubungi kami</p>
+                <p class="desc">
+                    Silahkan lengkapi informasi berikut, tim kami akan menghubungi anda sesegera mungkin untuk memberikan informasi lebih lanjut.     
+                </p>
+            </div>
+
+            <form onsubmit="userAction(event)" action="#hubungi" id="myForm">
+                <label>
+                    <input type="text" placeholder="&nbsp;" required id="form-nama">
+                    <span>Nama</span>
+                </label>
+                <label>
+                    <input type="number" placeholder="&nbsp;" required id="form-hape">
+                    <span>Handphone</span>
+                </label>
+                <label>
+                    <input type="email" placeholder="&nbsp;" required id="form-email">
+                    <span>Email</span>
+                </label>
+                <label>
+                    <textarea rows="4" placeholder="&nbsp;" required id="form-pesan"></textarea>
+                    <span>Pesan Anda</span>
+                </label>
+                <button type="submit" id="kirimEmail">
+                    <span>Kirim Pesan</span>
+                    <span class="spinner-border"></span>
+                </button>
+            </form>
+        </div>
     </section>
 
     <footer id="footer">
         <div class="wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="853px" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 143 119" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">   
-                <g id="Layer_x0020_1">
-                    <path fill="currentcolor" stroke="currentcolor" stroke-width="2" d="M143 0l-74 119 -35 -57 -22 0 0 -15 47 0c10,0 18,-8 18,-18l0 -15 -77 0 0 -15 91 0 0 30c0,18 -15,32 -32,32l-8 0 18 29 57 -91 17 0z" />
-                </g>
-            </svg>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="853px" version="1.1"
+                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                    viewBox="0 0 143 119" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">   
+                    <g id="Layer_x0020_1">
+                        <path fill="currentcolor" stroke="currentcolor" stroke-width="2" d="M143 0l-74 119 -35 -57 -22 0 0 -15 47 0c10,0 18,-8 18,-18l0 -15 -77 0 0 -15 91 0 0 30c0,18 -15,32 -32,32l-8 0 18 29 57 -91 17 0z" />
+                    </g>
+                </svg>
+                <p>revolution<br>property</p>
+            </div>
+            <div class="navigasi">
+                <p>Navigasi</p>
+                <div>
+                    <ul>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#kenapa">Kenapa Property</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#keuntungan">Keuntungan</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#harga">Harga</a></li>
+                        <li><a href="#penawaran">Penawaran Spesial</a></li>
+                        <li><a href="#hubungi">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="member">
+                <div>
+                    <p>Member Area</p>
+                    <p>Daftar aplikasi Member Area dan nikmati berbagai kemudahan dan layanan eksklusif dari kami.</p>
+                    <a href="https://membernew.revolutionproperty.id/" target="_blank">
+                        Daftar Sekarang
+                        <i class="ci-chevron-right-double"></i>
+                    </a>
+                </div>
+                <div>
+                    <img src="./assets/images/member-app.png" alt="member area">
+                </div>
+            </div>
         </div>
-        <p class="copyright">&copy; <span id="year"></span> Revolution Property. All rights reserved.</p>
+        <div class="mark">
+            <div>
+                <a href="https://www.facebook.com/p/Revolution-Property-Indonesia-100084794607700/" target="_blank"><i class="ci-love"></i></a>
+                <a href="https://www.instagram.com/rvproperty.official/" target="_blank"><i class="ci-love"></i></a>
+                <a href="https://www.tiktok.com/@rvpropertybali" target="_blank"><i class="ci-love"></i></a>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> Revolution Property.</p>
+        </div>
     </footer>
 
     <!-- Back To Top -->
@@ -1026,6 +1115,53 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <!-- kirim email -->
+    <script>
+        var ItemJSON;
+        const formDoc = document.getElementById("myForm");
+        const KirimButton = document.getElementById("kirimEmail");
+
+        const userAction = async (event) => {
+            event.preventDefault(); // mencegah reload halaman
+
+            var nama = document.getElementById("form-nama").value;
+            var hape = document.getElementById("form-hape").value;
+            var email = document.getElementById("form-email").value;
+            var pesan = document.getElementById("form-pesan").value;
+
+            ItemJSON = {
+                nama: nama,
+                hape: hape,
+                email: email,
+                pesan: pesan
+            };
+
+            KirimButton.disabled = true;
+            KirimButton.classList.add("submit-order");
+
+            KirimEmail()
+            .then(() => {
+                $("#alertModal").modal('show');
+                KirimButton.disabled = false;
+                KirimButton.classList.remove("submit-order");
+            })
+            .then(() => formDoc.reset());
+        }
+
+        const KirimEmail = async () => {
+            const response = await fetch(
+                'https://prod-43.southeastasia.logic.azure.com:443/workflows/c9339bbf81b0417ba34a83f4764eb696/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Fgy8OsjQC22C80_ssJCHI8iAsmM9yjVuJ1WSTmnkeJk',
+                {
+                    method: 'POST',
+                    body: JSON.stringify(ItemJSON), // stringify
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            return response; // biar bisa ditangkap di .then()
+        };
     </script>
 </body>
 </html>
