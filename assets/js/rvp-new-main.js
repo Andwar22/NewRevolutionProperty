@@ -277,6 +277,28 @@
   });
 // #endregion ========== HISTORY =============
 
+// #region ============= VARIAN =============
+  $(document).ready(function() {
+    var contents = {
+      0: '.content-resort1',
+      1: '.content-resort2',
+      2: '.content-resort3',
+    };
+
+    $('.carousel').on('select.flickity', function(event, index) {
+      console.log('Flickity select ' + index);
+
+      for (var key in contents) {
+        if (index == key) {
+          $(contents[key]).addClass('active');
+        } else {
+          $(contents[key]).removeClass('active');
+        }
+      }
+    });
+  });
+// #endregion ========== VARIAN =============
+
 // #region ============= COUNTER PROMO =============
   function getMonthlyCountdown() {
     const now = new Date();
