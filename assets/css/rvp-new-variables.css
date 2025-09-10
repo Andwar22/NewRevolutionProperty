@@ -103,7 +103,7 @@
             opacity: .3;
         }
         100% {
-            transform: scale(9);
+            transform: scale(7);
             opacity: 0;
         }
     }

@@ -203,6 +203,33 @@
          .to(box2Title, { top: "1rem", opacity: 1, duration: 4 })
          .to(box3Title, { top: "1rem", opacity: 1, duration: 4 })
          .to(box4Title, { bottom: "1.5rem", opacity: 1, duration: 2 })
+
+
+  // GSAP counter
+  const counterObj = { val: 0 };
+  const counterID = document.getElementById("visitorCounter");
+
+  // Buat animasi counter (pause dulu)
+  const counterTL = gsap.to(counterObj, {
+    val: 3000,
+    duration: 2,
+    ease: "power1.out",
+    paused: true,
+    onUpdate: () => {
+      counterID.textContent =
+      Math.floor(counterObj.val / 20) * 20;
+    }
+  });
+
+  // ScrollTrigger untuk restart animasi setiap kali masuk
+  ScrollTrigger.create({
+    trigger: "#tentang",
+    start: "+=30% center",
+    onEnter: () => {
+      counterObj.val = 0; // reset angka
+      counterTL.restart();
+    }
+  });
 // #endregion ========== TENTANG =============
 
 // #region ============= KENAPA =============
@@ -342,7 +369,7 @@
 
   const testiTL = gsap.timeline({
     scrollTrigger: {
-      trigger: ".promo",
+      trigger: "#nextProp",
       start: "bottom center",
       end: "+=100%",
       scrub: true
@@ -383,7 +410,7 @@
 
 
 
-// #region ============= TOGGLE DARK MODE =============
+// #region ============= TOGGLE THEME =============
   document.addEventListener("DOMContentLoaded", function () {
     const temaSelect = document.getElementById("opsiTema");
 
@@ -403,7 +430,9 @@
     // jalankan saat berubah
     temaSelect.addEventListener("change", applyTheme);
   });
-// #endregion ======= TOGGLE DARK MODE =============
+// #endregion ======= TOGGLE THEME =============
+
+
 
 
 
