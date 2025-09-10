@@ -66,9 +66,9 @@
         height: 50px;
         border: none;
         outline: none;
-        color: var(--primary);
+        color: var(--secondary);
         font-size: 2.25rem;
-        background-color: var(--yellow);
+        background-color: var(--primary);
         border-radius: 50%;
         box-shadow: 2px 2px 8px var(--shadow);
         transform: scale(0);
@@ -262,7 +262,7 @@
                             aspect-ratio: 1;
                             height: 150%;
                             border-radius: 50%;
-                            background-color: var(--secondary);
+                            background-color: var(--putih);
                             z-index: 1;
 
                             &::after {
@@ -397,7 +397,7 @@
             padding: 0 4rem 4rem 4rem;
 
             .left {
-                color: var(--secondary);
+                color: var(--putih);
                 padding-bottom: 3rem;
 
                 p:first-of-type {
@@ -406,7 +406,7 @@
                     font-weight: 700;
                     line-height: 1;
                     margin-bottom: .0;
-                    text-shadow: 0 0 20px rgba(0,0,0,.9);
+                    text-shadow: 0 0 20px rgba(0,0,0,.75);
                 }
                 p:nth-of-type(2) {
                     font-family: var(--fontMain);
@@ -414,9 +414,10 @@
                     font-weight: 700;
                     line-height: 1;
                     margin-bottom: .5rem;
-                    text-shadow: 0 0 20px rgba(0,0,0,.9);
+                    text-shadow: 0 0 20px rgba(0,0,0,.75);
                 }
                 p:last-child {
+                    width: 50%;
                     color: var(--putih);
                     font-size: 1.35rem;
                     margin-bottom: 0;
@@ -427,7 +428,7 @@
             .right {
                 margin-bottom: 1rem;                
 
-                .visitors {
+                /* .visitors {
                     > p {
                         color: var(--putih);
                         font-size: 1rem;
@@ -479,7 +480,7 @@
                             }
                         }
                     }
-                }
+                } */
             }
         }
 
@@ -564,7 +565,7 @@
                     user-select: none;
 
                     &:hover {
-                        color: var(--yellow);
+                        color: var(--secondary);
                     }
                     i {
                         font-size: 1.75rem;
@@ -580,39 +581,6 @@
                     animation-play-state: paused;
                 }
             }
-        }
-    }
-
-    @keyframes cloudMove {
-        to {
-            background-size: 125%;
-            background-position: 100% top;
-        }
-    }
-    @keyframes pulseBtnVideo {
-        0% {
-            box-shadow: 0 0 0 0px #ffffff88;
-        }
-        100% {
-            box-shadow: 0 0 0 50px transparent;
-        }
-    }        
-    @keyframes pulseBtnVideo2 {
-        0% {
-            transform: scale(0);
-            opacity: .3;
-        }
-        100% {
-            transform: scale(9);
-            opacity: 0;
-        }
-    }
-    @keyframes autoRun {
-        from {
-            left: 100%;
-        }
-        to {
-            left: calc(var(--width) * -1);
         }
     }
 /* #endregion ========== HEADER ============= */
@@ -763,7 +731,7 @@
 
                     &:hover {
                         color: var(--primary);
-                        background-color: var(--yellow);
+                        background-color: var(--secondary);
                         transform: translate(-2px, -2px);
                         box-shadow: 2px 4px 0 var(--clr700);
                     }
@@ -1066,7 +1034,7 @@
                     svg {
                         height: 30px;
                         width: fit-content;
-                        fill: var(--secondary);
+                        fill: var(--putih);
                         transition: var(--anim);
                     }
                     p {
@@ -1083,7 +1051,7 @@
                             left: 0;
                             width: 10px;
                             height: 10px;
-                            background-color: var(--secondary);
+                            background-color: var(--putih);
                             border-radius: 50%;
                         }
                     }
@@ -1182,13 +1150,13 @@
                 margin-bottom: 5rem;
 
                 svg {
-                    color: var(--secondary);
+                    color: var(--putih);
                     width: 125px;
                     height: auto;
                     text-align: center;
                 }
                 .subtitle, .desc {
-                    color: var(--secondary);
+                    color: var(--putih);
                 }
             }
 
@@ -1201,7 +1169,7 @@
                 .image {
                     width: 100%;
                     height: 100%;
-                    background-color: var(--secondary);
+                    background-color: var(--putih);
                     background-image: url('/assets/images/bg-revo.jpg');
                     background-repeat: no-repeat;
                     background-position: 40% bottom;
@@ -1227,17 +1195,17 @@
                             aspect-ratio: 1;
                             color: var(--primary);
                             margin-bottom: .75rem;
-                            background-color: var(--secondary);
+                            background-color: var(--putih);
                             border-radius: 50%;
                         }
                         p:nth-of-type(1) {
-                            color: var(--secondary);
+                            color: var(--putih);
                             font-size: 1.35rem;
                             font-weight: 700;
                             margin-bottom: .25rem;
                         }
                         p:nth-of-type(2) {
-                            color: var(--secondary);
+                            color: var(--putih);
                             font-size: 1rem;
                             margin-bottom: 0;
                         }
@@ -1250,7 +1218,7 @@
                     margin-bottom: 3rem;
 
                     .subtitle, .desc {
-                        color: var(--secondary);
+                        color: var(--putih);
                     }
                 }
 
@@ -1346,14 +1314,13 @@
                             display: block;
                             width: 16px;
                             aspect-ratio: 1;
-                            background-color: #6d7abc;
                             border-radius: 50%;
                             transform: scale(.7);
                             transition: var(--anim);
                             z-index: 5;
 
                             &:first-child {
-                                background-color: var(--yellow) !important;
+                                background-color: var(--secondary) !important;
                                 transform: scale(1) !important;
                             }
                         }
@@ -1612,14 +1579,14 @@
                         height: 40px;
                     }
                     .best span {
-                        color: var(--yellow);
+                        color: var(--secondary);
                     }
                     .info p:first-child {
                         color: var(--putih);
                     }
                     button {
                         color: var(--primary);
-                        background-color: var(--yellow);
+                        background-color: var(--secondary);
                     }
                 }
             }
@@ -1666,7 +1633,7 @@
 
                     &:hover {
                         color: var(--primary);
-                        background-color: var(--yellow);
+                        background-color: var(--secondary);
                         transform: translate(-2px, -2px);
                         box-shadow: 2px 4px 0 var(--clr700);
                     }
@@ -1753,7 +1720,7 @@
                     margin-bottom: 1rem;
 
                     .subtitle {
-                        color: var(--yellow);
+                        color: var(--secondary);
                     }
                     .desc {
                         font-size: 1.35rem;
@@ -1873,7 +1840,7 @@
                         background-image: radial-gradient(
                             circle at 100% 50%,
                             transparent 20px,
-                            hsl(from var(--yellow) h s 90) 21px
+                            hsl(from var(--secondary) h s 90) 21px
                         );
                     }
 
@@ -1931,7 +1898,7 @@
                 text-decoration: none;
                 padding: 1rem 1.5rem;
                 margin: 0 auto;
-                background-color: var(--yellow);
+                background-color: var(--secondary);
                 border: none;
                 outline: none;
                 border-radius: 3rem;
@@ -2227,7 +2194,7 @@
 
                         &:hover {
                             color: var(--primary);
-                            background-color: var(--yellow);
+                            background-color: var(--secondary);
                             transform: translate(-2px, -2px);
                             box-shadow: 2px 4px 0 var(--clr700);
                         }
@@ -2321,7 +2288,7 @@
 
                     &:hover {
                         color: var(--primary);
-                        background-color: var(--yellow);
+                        background-color: var(--secondary);
                         transform: translate(-2px, -2px);
                         box-shadow: 2px 4px 0 var(--clr700);
                     }
@@ -2347,12 +2314,6 @@
                     }
                 }
             }
-        }
-    }
-
-    @keyframes spinnerAnim {
-        to {
-            transform: rotate(360deg);
         }
     }
 /* #endregion ========== HUBUNGI ============= */
@@ -2431,7 +2392,7 @@
                         font-weight: 600;
                         text-decoration: none;
                         padding: .65rem 1rem;
-                        background-color: var(--yellow);
+                        background-color: var(--secondary);
                         border-radius: 2rem;
 
                         i {

@@ -273,7 +273,7 @@
     timelineTL.to(dotsLine, { height: progress + "%" }, "<");
 
     // animasi dot berubah warna
-    timelineTL.to(dots[i], { backgroundColor: "yellow", scale: "1", duration: 2 }, "<");
+    timelineTL.to(dots[i], { backgroundColor: "var(--secondary)", scale: "1", duration: 2 }, "<");
   });
 // #endregion ========== HISTORY =============
 
@@ -383,7 +383,27 @@
 
 
 
+// #region ============= TOGGLE DARK MODE =============
+  document.addEventListener("DOMContentLoaded", function () {
+    const temaSelect = document.getElementById("opsiTema");
 
+    function applyTheme() {
+      const value = temaSelect.value;
+
+      // hapus semua class tema lama
+      document.body.classList.remove("blue", "brown", "orange");
+
+      // tambahkan class sesuai value terpilih
+      document.body.classList.add(value);
+    }
+
+    // jalankan saat pertama kali load
+    applyTheme();
+
+    // jalankan saat berubah
+    temaSelect.addEventListener("change", applyTheme);
+  });
+// #endregion ======= TOGGLE DARK MODE =============
 
 
 

@@ -1,84 +1,151 @@
 
-/* #region ============= FONT & COLOR ============= */
-    :root {
-        /* #region ============= FONTS ============= */
-            --fontMain: "Fraunces", serif;
-            --fontSecondary: "Urbanist", sans-serif;
-        /* #endregion ========== FONTS ============= */
+:root {
+    /* #region ============= FONTS ============= */
+        --fontMain: "Fraunces", serif;
+        --fontSecondary: "Urbanist", sans-serif;
+    /* #endregion ========== FONTS ============= */
 
-        /* #region ============= DEFAULT COLOR ============= */
-            /*primary, sesuaikan turunan*/
-            --clr100: hsl(from var(--clr400) h s 90);
-            --clr200: hsl(from var(--clr400) h s 80);
-            --clr300: hsl(from var(--clr400) h s 70);
-            --clr400: #5570D1; /* default  */
-            --clr500: hsl(from var(--clr400) h s 60);
-            --clr600: hsl(from var(--clr400) h s 50);
-            --clr700: hsl(from var(--clr400) h s 40);
+    /* #region ============= DEFAULT COLOR ============= */
+        /*primary, sesuaikan turunan*/
+        --clr100: hsl(from var(--clr400) h s 90);
+        --clr200: hsl(from var(--clr400) h s 80);
+        --clr300: hsl(from var(--clr400) h s 70);
+        --clr400: #5570D1; /* default  */
+        --clr500: hsl(from var(--clr400) h s 60);
+        --clr600: hsl(from var(--clr400) h s 50);
+        --clr700: hsl(from var(--clr400) h s 40);
 
-            --primary: var(--clr400);
-            --primary-trans: hsl(from var(--clr400) h s l / .15);
-            --secondary: #fae2c7;
+        --primary: var(--clr400);
+        --secondary: #fff877;
 
-            /* Base */
-            --mainBg: hsl(from var(--clr400) h s 95);
-            --white: #ffffff;
-            --black: #212529;
-            --grey: #6A6A6A;
-            --soft-grey: #ededed;
-            --border: #e1e1e1;
+        /* Base */
+        --mainBg: hsl(from var(--clr400) h s 95);
+        --white: #ffffff;
+        --black: #212529;
+        --grey: #6A6A6A;
+        --soft-grey: #ededed;
+        --border: #e1e1e1;
 
-            /*statis*/
-            --putih: #ffffff;
-            --hitam: #212529;
-            --garis: #e1e1e1;
+        /*statis*/
+        --putih: #ffffff;
+        --hitam: #212529;
+        --garis: #e1e1e1;
 
-            /* Status */
-            --red: #D63939;
-            --green: #2FB344;
-            --orange: #F59F00;
-            --blue: #066FD1;
-            --yellow: #ffeb3b;
-            --gold: #EFB812;
+        /* Status */
+        --red: #D63939;
+        --green: #2FB344;
+        --orange: #F59F00;
+        --blue: #066FD1;
+        --yellow: #ffeb3b;
+        --gold: #EFB812;
 
-            /* Text */
-            --fontWhite: #ffffff;
-            --fontBlack: #1f2937;
-            --fontMuted: #6b7280;
-            --boxShadow: 85, 112, 209; /*rgb from default color*/
+        /* Text */
+        --fontWhite: #ffffff;
+        --fontBlack: #1f2937;
+        --fontMuted: #6b7280;
+        --boxShadow: 85, 112, 209; /*rgb from default color*/
 
-            /*others*/
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --anim: .15s ease;
-        /* #endregion ========== DEFAULT COLOR ============= */
+        /*others*/
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --anim: .15s ease;
+    /* #endregion ========== DEFAULT COLOR ============= */
+}
+
+/* #region ============= DARK COLOR ============= */
+    body.dark {
+        --clr100: hsl(from var(--clr400) h s 90);
+        --clr200: hsl(from var(--clr400) h s 80);
+        --clr300: hsl(from var(--clr400) h s 70);
+        --clr400: #0c7bb2 !important;
+        --clr500: hsl(from var(--clr400) h s 60);
+        --clr600: hsl(from var(--clr400) h s 50);
+        --clr700: hsl(from var(--clr400) h s 40);
+
+        --primary: var(--clr400);
+        --secondary: #fff877;
+        
+        /* Base */
+        --mainBg: #001824;
+        --white: #212529;
+        --black: #ffffff;
+        --grey: #aaaaaa;
+        --soft-grey: #3a3e44;
+        --border: #4a4a4a;
+
+        /* Text */
+        --fontWhite: #f9fafb;
+        --fontBlack: #ffffff;
+        --fontMuted: #94a3b8;
+
+        /*others*/
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
-
-    /* #region ============= DARK COLOR ============= */
-        body.dark {
-            --clr400: #0c7bb2 !important;
-            --primary: var(--clr400);
-            --primary-trans: hsl(from var(--clr400) h s l / .15);
-            
-            /* Base */
-            --mainBg: #001824;
-            --white: #212529;
-            --black: #ffffff;
-            --grey: #aaaaaa;
-            --soft-grey: #3a3e44;
-            --border: #4a4a4a;
-
-            /* Text */
-            --fontWhite: #f9fafb;
-            --fontBlack: #ffffff;
-            --fontMuted: #94a3b8;
-
-            /*others*/
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-    /* #endregion ========== DARK COLOR ============= */
-/* #endregion ========== VARIABLES ============= */
-
+/* #endregion ========== DARK COLOR ============= */
 
 /* #region ============= KEYFRAMES ============= */
-    
+    @keyframes cloudMove {
+        to {
+            background-size: 125%;
+            background-position: 100% top;
+        }
+    }
+    @keyframes pulseBtnVideo {
+        0% {
+            box-shadow: 0 0 0 0px #ffffff88;
+        }
+        100% {
+            box-shadow: 0 0 0 50px transparent;
+        }
+    }        
+    @keyframes pulseBtnVideo2 {
+        0% {
+            transform: scale(0);
+            opacity: .3;
+        }
+        100% {
+            transform: scale(9);
+            opacity: 0;
+        }
+    }
+
+    @keyframes autoRun {
+        from {
+            left: 100%;
+        }
+        to {
+            left: calc(var(--width) * -1);
+        }
+    }
+
+    @keyframes spinnerAnim {
+        to {
+            transform: rotate(360deg);
+        }
+    }
 /* #endregion ========== KEYFRAMES ============= */
+
+/* #region ============= THEME ============= */
+    body.brown {
+        --clr100: hsl(from var(--clr400) h s 90);
+        --clr200: hsl(from var(--clr400) h s 80);
+        --clr300: hsl(from var(--clr400) h s 70);
+        --clr400: brown !important;
+        --clr500: hsl(from var(--clr400) h s 60);
+        --clr600: hsl(from var(--clr400) h s 50);
+        --clr700: hsl(from var(--clr400) h s 40);
+        --primary: var(--clr400) !important;
+        --secondary: #fff877 !important;
+    }
+
+    body.orange {
+        --clr100: hsl(from var(--clr400) h s 90);
+        --clr200: hsl(from var(--clr400) h s 80);
+        --clr300: hsl(from var(--clr400) h s 70);
+        --clr400: orange !important;
+        --clr500: hsl(from var(--clr400) h s 60);
+        --clr600: hsl(from var(--clr400) h s 50);
+        --clr700: hsl(from var(--clr400) h s 40);
+        --primary: var(--clr400) !important;
+        --secondary: #212121 !important;
+    }
+/* #endregion ========== THEME ============= */
