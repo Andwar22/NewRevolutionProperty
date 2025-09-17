@@ -961,189 +961,126 @@
 
         .nabung {
             margin-top: 8rem;
+            
+            .title {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
 
-            .wrap-perbedaan {
-                --sliderWidth: 500px;
-
-                flex: 1;
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .perbedaan {
                 width: 100%;
-                transition: all var(--anim);
 
-                .slider-product {
-                    position: relative;
-                    width: var(--sliderWidth);
-                    aspect-ratio: 1;
-                    overflow: hidden;
-            
-                    .img-slider {
-                        display: flex;
-                        height: 100%;
-                        width: 100%;
-            
-                        span {
-                            display: block;
-                            position: absolute;
-                            left: 0;
-                            height: 100%;
-                            width: 50%;
-            
+                .compare {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    padding: 1rem;
+                    min-height: 300px;
+
+                    .home,
+                    .money {
+                       width: 100%;
+                       height: 100%;
+                       padding: 2rem;
+                       background-color: var(--white);
+                       border: 1px solid var(--border);
+                       border-radius: 1rem;
+
+                       .wrap-img {
+                            display: grid;
+                            justify-content: center;
+                            align-items: flex-end;
+                            height: 160px;
+
                             img {
-                                height: 100%;
+                                transform-origin: center bottom;
+                            }
+                       }
+                    }
+
+                    .home {
+
+                    }
+
+                    .money {}
+                }
+
+                .slider {
+                    position: relative;
+                    width: 100%;
+                    height: fit-content;
+                    isolation: isolate;
+
+                    input[type="range"] {
+                        position: relative;
+                        width: 100%;
+                        margin: 0;
+                        background: none;
+                        outline: none;
+                        appearance: none;
+                    }
+                    input[type="range"]::-webkit-slider-thumb {
+                        appearance: none;
+                        width: 48px;
+                        height: 40px;
+                        background-image: url(/assets/images/knop.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        filter: drop-shadow(5px 3px 5px rgba(0,0,0,.35));
+                        cursor: ew-resize;
+                    }
+
+                    .line {
+                        position: absolute;
+                        top: 16px;
+                        left: 0;
+                        width: 100%;
+                        height: 10px;
+                        border-radius: 2rem;
+                        overflow: hidden;
+                        z-index: -1;
+
+                        span {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 0;
+                            height: 100%;
+                            background-color: var(--primary);
+
+                            &:last-child {
                                 width: 100%;
-                                object-fit: cover;
-                                object-position: left;
+                                background-color: var(--grey);
+                                z-index: -1;
                             }
                         }
-                        .img-full {
-                            left: auto;
-                            right: 0;
-                            
-                            & img {
-                                object-position: right;
-                            } 
-                        }
                     }
-            
-                    .slider-divider {
-                        position: absolute;
-                        inset: 0;
-                        z-index: 20;
-            
-                        input {
-                            width: 100%;
-                            background: none;
-                            outline: none;
-                            appearance: none;
-                        }
-                        input::-webkit-slider-thumb{
-                            height: 486px;
-                            width: 3px;
-                            background: none;
-                            appearance: none;
-                            cursor: col-resize;
-                        }
-            
-                        .drag-handle {
-                            position: absolute;
-                            left: calc(50% - 4px);
-                            width: 4px;
-                            height: 100%;
-                            background-color: var(--white);
-                            pointer-events: none;
-            
-                            span {
+
+                    datalist {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        writing-mode: sideways-lr;
+                        width: 100%;
+
+                        option {
+                            position: relative;
+                            font-weight: 600;
+                            padding: 0;
+                            transform: rotate(90deg);
+
+                            &::before {
+                                content: "";
                                 position: absolute;
                                 top: 50%;
-                                left: 50%;
-                                height: 42px;
-                                width: 42px;
-                                background-color: var(--primary);
-                                border: 3px solid var(--primary);
-                                border-radius: 50%;
-                                box-shadow: 0 0 15px var(--shadow);
-                                transform: translate(-50%, -50%);
-                                z-index: 5;
-            
-                                &::before,
-                                &::after {
-                                    content: "";
-                                    position: absolute;
-                                    top: 50%;
-                                    border: 11px solid transparent;
-                                    border-bottom-width: 0px;
-                                    border-right-width: 0px;
-                                    transform: translate(-50%, -50%) rotate(45deg);
-                                }
-                                &::before {
-                                    left: 40%;
-                                    border-left-color: var(--white);
-                                }
-                                &::after{
-                                    left: 60%;
-                                    border-top-color: var(--white);
-                                }
+                                right: 1.55rem;
+                                transform: translateY(-50%);
+                                width: 6px;
+                                border-top: 1px solid var(--grey);
                             }
                         }
                     }
-                }
-
-                .text-slider {
-                    position: absolute;
-                    top: 0;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    gap: 1.5rem;
-                    width: calc(50% - var(--sliderWidth) / 2);
-                    height: 100%;
-                    transition: var(--anim);
-                    overflow-x: hidden;
-
-                    svg {
-                        height: 30px;
-                        width: fit-content;
-                        fill: var(--putih);
-                        transition: var(--anim);
-                    }
-                    p {
-                        position: relative;
-                        color: var(--black);
-                        padding-left: 1.25rem;
-                        margin: 0;
-                        transition: var(--anim);
-
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            top: .35rem;
-                            left: 0;
-                            width: 10px;
-                            height: 10px;
-                            background-color: var(--putih);
-                            border-radius: 50%;
-                        }
-                    }
-                }
-
-                .ours {
-                    padding-right: 1rem;
-                    left: 0;
-                }
-                .others {
-                    padding-left: 1rem;
-                    right: 0;
-                }
-                .others svg {
-                    fill: var(--apple);
-                }
-                .others p::before {
-                    background-color: var(--apple);
-                }
-            }
-            
-            .wrap-perbedaan.min {
-                .ours {
-                    transform: scale(.9);
-                    filter: grayscale(1);
-                    opacity: .5;
-                }
-                .others {
-                    transform: scale(1.1);
-                }
-            }
-
-            .wrap-perbedaan.max {
-                .others {
-                    transform: scale(.9);
-                    filter: grayscale(1);
-                    opacity: .5;
-                }
-                .ours {
-                    transform: scale(1.1);
                 }
             }
         }

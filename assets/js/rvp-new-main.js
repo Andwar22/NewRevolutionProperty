@@ -248,24 +248,113 @@
 // #endregion ========== KENAPA =============
 
 // #region ============= PERBEDAAN =============
-  const slider = document.querySelector(".slider-divider input");
-  const shrink = document.querySelector(".img-shrink");
-  const full = document.querySelector(".img-full");
-  const handle = document.querySelector(".drag-handle");
-  const activeSide = document.querySelector(".wrap-perbedaan");
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.getElementById("sliderYears");
+    const wrapCompare = document.getElementById("wrapCompare");
+    const homeDiv = document.getElementById("homeImg");
+    const moneyDiv = document.getElementById("moneyImg");
+    const homeVal = document.getElementById("homeValNow");
+    const moneyVal = document.getElementById("moneyValNow");
+    const tahunSpans = document.querySelectorAll(".tahunNow");
+    const sliderOn = document.getElementById("sliderOn");
 
-  if (slider && shrink && full && handle && activeSide) {
-    slider.addEventListener("input", () => {
-      let sliderVal = parseInt(slider.value, 10);
+    // mapping slider value ke tahun
+    const tahunMap = {
+      0: 2005,
+      10: 2007,
+      20: 2009,
+      30: 2011,
+      40: 2013,
+      50: 2015,
+      60: 2017,
+      70: 2019,
+      80: 2021,
+      90: 2023,
+      100: 2025,
+    };
 
-      shrink.style.width = sliderVal + "%";
-      full.style.width = (100 - sliderVal) + "%";
-      handle.style.left = sliderVal + "%";
+    // harga tanah per tahun (rata-rata, dalam juta)
+    const hargaTanah = {
+      2005: 100,
+      2007: 120,
+      2009: 140,
+      2011: 170,
+      2013: 200,
+      2015: 230,
+      2017: 270,
+      2019: 320,
+      2021: 380,
+      2023: 440,
+      2025: 500,
+    };
 
-      activeSide.classList.toggle("min", sliderVal <= 30);
-      activeSide.classList.toggle("max", sliderVal >= 70);
-    });
-  }
+    // daya beli Rp 100.000 (kg beras)
+    const dayaBeli = {
+      2005: 30,
+      2007: 27,
+      2009: 24,
+      2011: 20,
+      2013: 16,
+      2015: 13,
+      2017: 10,
+      2019: 8,
+      2021: 6,
+      2023: 5,
+      2025: 4,
+    };
+
+    // ukuran dasar img
+    const homeMin = 100; 
+    const homeMax = 150; 
+    const moneyMin = 100;
+    const moneyMax = 150;
+
+    function updateSizes() {
+      const value = parseInt(slider.value, 10);
+      const tahun = tahunMap[value] || "";
+      const stepCount = value / 10; // hitung step (0-10)
+
+      // update tahun di semua span
+      tahunSpans.forEach(span => {
+        span.textContent = tahun;
+      });
+
+      // update harga tanah
+      const harga = hargaTanah[tahun] || 0;
+      homeVal.textContent = harga + " juta";
+
+      // update daya beli
+      const kg = dayaBeli[tahun] || 0;
+      moneyVal.textContent = kg;
+
+      // ukuran img
+      const homeSize = homeMin + stepCount * ((homeMax - homeMin) / 10);
+      const moneySize = moneyMax - stepCount * ((moneyMax - moneyMin) / 10);
+
+      // update style img
+      homeDiv.style.width = homeSize + "px";
+      homeDiv.style.height = homeSize + "px";
+      moneyDiv.style.width = moneySize + "px";
+      moneyDiv.style.height = moneySize + "px";
+
+      // tambahkan class "max" jika value = 100
+      if (value === 100) {
+        wrapCompare.classList.add("max");
+      } else {
+        wrapCompare.classList.remove("max");
+      }
+
+      slider.oninput = ()=>{
+        sliderOn.style.width = slider.value + "%";
+      }
+    }
+
+    // jalankan sekali saat load
+    updateSizes();
+
+    // update saat slider digeser
+    slider.addEventListener("input", updateSizes);
+  });
 // #endregion ========== PERBEDAAN =============
 
 // #region ============= HISTORY =============
@@ -407,6 +496,11 @@
   }
   document.getElementById("year").textContent = getYear();
 // #endregion ========== GET YEAR =============
+
+
+
+
+
 
 
 
