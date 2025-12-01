@@ -10,16 +10,16 @@
         --clr100: hsl(from var(--clr400) h s 90);
         --clr200: hsl(from var(--clr400) h s 80);
         --clr300: hsl(from var(--clr400) h s 70);
-        --clr400: #5570D1; /* default  */
+        --clr400: #4881FF; /* default  */
         --clr500: hsl(from var(--clr400) h s 60);
         --clr600: hsl(from var(--clr400) h s 50);
         --clr700: hsl(from var(--clr400) h s 40);
 
         --primary: var(--clr400);
-        --secondary: #fff877;
+        --secondary: #FF7C02;
 
         /* Base */
-        --mainBg: hsl(from var(--clr400) h s 95);
+        --mainBg: hsl(from var(--clr400) h s 98);
         --white: #ffffff;
         --black: #212529;
         --grey: #6A6A6A;
@@ -47,7 +47,7 @@
 
         /*others*/
         --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        --anim: .15s ease;
+        --anim: .2s ease;
     /* #endregion ========== DEFAULT COLOR ============= */
 }
 

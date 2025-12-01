@@ -8,83 +8,72 @@
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
-  // #endregion ========== BACK TO TOP =============
+// #endregion ========== BACK TO TOP =============
   
 // #region ============= NAVBAR CONTROL ONSCROLL =============
   document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.getElementById("navbar");
+    const layerTop = document.querySelector(".ly-top");
+    const layerBot = document.querySelector(".ly-bot");
     const bttBtn = document.getElementById("bttBtn");
-    
+
     let currentDevice = "";
     let lastScrollTop = 0;
-    const delta = 10;          // Sensitivitas gerakan scroll
-    const scrollThreshold = 200; // Ubah jadi lebih rendah agar terlihat cepat
+    const delta = 10; // sensitivitas gerakan scroll
+
+    // Threshold = 60% tinggi viewport (60vh)
+    const getScrollThreshold = () =>
+      (window.innerHeight || document.documentElement.clientHeight) * 0.6;
+
+    let scrollThreshold = getScrollThreshold();
 
     // Deteksi device
     function detectDevice() {
       if (window.matchMedia('screen and (min-width: 1024px)').matches) {
         currentDevice = "desktop";
-      }
-      else if (window.matchMedia('screen and (min-width: 768px) and (max-width: 1023px)').matches) {
+      } else if (window.matchMedia('screen and (min-width: 768px) and (max-width: 1023px)').matches) {
         currentDevice = "tablet";
-      }
-      else {
+      } else {
         currentDevice = "mobile";
       }
     }
     detectDevice();
-    window.addEventListener("resize", detectDevice);
+
+    // Update device & threshold saat resize
+    window.addEventListener("resize", () => {
+      detectDevice();
+      scrollThreshold = getScrollThreshold();
+    });
 
     // Scroll event utama
     window.addEventListener("scroll", function() {
       const scrollPos = window.scrollY || document.documentElement.scrollTop;
 
       // === Back to Top Button ===
-      if (scrollPos > 70) {
-        bttBtn.style.transform = "scale(1)";
-      }
-      else {
-        bttBtn.style.transform = "scale(0)";
-      }
+      bttBtn.style.transform = scrollPos > 100 ? "scale(1)" : "scale(0)";
 
       // === Ubah Style Navbar ===
+      // if (currentDevice === "desktop") {}
       if (scrollPos > 70) {
-        if (currentDevice === "desktop") {
-          navbar.style.padding = "1rem 4rem";
-          navbar.style.background = "var(--white)";
-          navbar.style.boxShadow = "0 5px 15px rgba(0,0,0,.25)"
-        }
-        else if (currentDevice === "tablet") {
-          // navbar.style.padding = "1rem 3rem";
-        }
-        else if (currentDevice === "mobile") {
-          // navbar.style.padding = "1rem 1.5rem";
-        }
-      }
-      else {
-        if (currentDevice === "desktop") {
-          navbar.style.padding = "2rem 4rem";
-          navbar.style.background = "transparent";
-          navbar.style.boxShadow = "none"
-        }
-        else if (currentDevice === "tablet") {
-          // navbar.style.padding = "1rem 3rem";
-        }
+        if (layerTop) layerTop.style.opacity = 0;
+        if (layerBot) layerBot.style.opacity = 1;
+      } else {
+        if (layerTop) layerTop.style.opacity = 1;
+        if (layerBot) layerBot.style.opacity = 0;
       }
 
-      // === Hide Navbar Saat Scroll Down ===
+      // === Hide Navbar Saat Scroll Down (aktif setelah > 60vh) ===
       if (Math.abs(lastScrollTop - scrollPos) > delta) {
         if (scrollPos > lastScrollTop && scrollPos > scrollThreshold) {
           // Scroll ke bawah
-          navbar.style.top = "-5rem";
-        }
-        else {
+          navbar.style.top = "-6rem";
+        } else {
           // Scroll ke atas
           navbar.style.top = "0";
         }
         lastScrollTop = scrollPos;
       }
-    });
+    }, { passive: true });
   });
 // #endregion ========== NAVBAR CONTROL ONSCROLL =============
 
@@ -116,75 +105,80 @@
 // #endregion ======= TOGGLE DARK MODE =============
 
 // #region ============= NAVBAR MOBILE =============
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const navToggle = document.getElementById('nav-toggle');
     const navbar = document.getElementById('navbar');
     const body = document.body;
     const navMenuLinks = document.querySelectorAll('.nav-menu a');
 
+    if (!navToggle || !navbar) return; // Pastikan elemen penting ada sebelum lanjut
+
     // Fungsi untuk menangani klik di luar navbar
     function handleOutsideClick(event) {
-        if (!navbar.contains(event.target)) {
+        // Abaikan jika elemen yang diklik adalah toggle itu sendiri
+        if (!navbar.contains(event.target) && event.target !== navToggle) {
             navToggle.checked = false;
-            body.style.overflowY = 'auto'; // Mengembalikan overflow body menjadi auto
-        }
-    }
-
-    // Tambahkan event listener untuk klik di luar navbar
-    document.addEventListener('click', handleOutsideClick);
-
-    // Fungsi untuk mengatur scroll pada body saat checkbox di-centang
-    function handleBodyScroll() {
-        if (navToggle.checked) {
-            body.style.overflowY = 'hidden';
-        } else {
             body.style.overflowY = 'auto';
         }
     }
 
-    // Fungsi untuk menangani klik pada tautan di dalam .nav-menu
-    function handleNavMenuLinkClick() {
-        navToggle.checked = false; // Menonaktifkan checkbox
-        body.style.overflowY = 'auto'; // Mengembalikan overflow body menjadi auto
+    // Fungsi untuk mengatur scroll pada body saat checkbox di-centang
+    function handleBodyScroll() {
+        body.style.overflowY = navToggle.checked ? 'hidden' : 'auto';
     }
 
-    // Tambahkan event listener untuk checkbox di-centang
-    navToggle.addEventListener('change', handleBodyScroll);
+    // Fungsi untuk menangani klik pada tautan di dalam .nav-menu
+    function handleNavMenuLinkClick() {
+        navToggle.checked = false;
+        body.style.overflowY = 'auto';
+    }
 
-    // Tambahkan event listener untuk setiap tautan di dalam .nav-menu
-    navMenuLinks.forEach(function(link) {
-        link.addEventListener('click', handleNavMenuLinkClick);
-    });
+    // Event listeners
+    document.addEventListener('click', handleOutsideClick);
+    navToggle.addEventListener('change', handleBodyScroll);
+    navMenuLinks.forEach(link => link.addEventListener('click', handleNavMenuLinkClick));
   });
 // #endregion ========== NAVBAR MOBILE =============
 
 // #region ============= HEADER =============
-  const HeroBuild = document.querySelector('.hero-building');
-  const HeroTop = document.querySelector('.hero-top');
+  window.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("heroVideo");
+    const toggleBtn = document.getElementById("toggleMuteBtn");
 
-  const headerTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#header",
-      start: "top top",
-      end: "+=100%",
-      scrub: true,
-      invalidateOnRefresh: true
-    }
+    // Pastikan video autoplay saat reload
+    // Browser kadang butuh user gesture, jadi kita paksa play lewat Promise
+    const playVideo = () => {
+      video.play().catch(() => {
+        // kalau gagal autoplay (karena policy browser), tunggu interaksi user
+        document.addEventListener("click", () => video.play(), { once: true });
+      });
+    };
+
+    playVideo();
+
+    // Set default muted
+    video.muted = true;
+    toggleBtn.innerHTML = `<i class="ci-volume-high"></i>`;
+
+    // Toggle suara
+    toggleBtn.addEventListener("click", () => {
+      video.muted = !video.muted;
+      toggleBtn.innerHTML = video.muted
+        ? `<i class="ci-volume-high"></i>`
+        : `<i class="ci-volume-off-02"></i>`;
+    });
   });
-
-  headerTL.to(HeroBuild, { top: "-3rem" })
-          .to(HeroTop, { top: "-3rem" }, "<")
 // #endregion ========== HEADER =============
 
 // #region ============= TENTANG =============
-  const box1 = document.querySelector('#tentang .images div:first-child');
-  const box2 = document.querySelector('#tentang .images div:nth-child(2)');
-  const box3 = document.querySelector('#tentang .images div:nth-child(3)');
-  const box4 = document.querySelector('#tentang .images div:last-child');
-  const box1Title = document.querySelector('#tentang .images div:first-child span');
-  const box2Title = document.querySelector('#tentang .images div:nth-child(2) span');
-  const box3Title = document.querySelector('#tentang .images div:nth-child(3) span');
-  const box4Title = document.querySelector('#tentang .images div:last-child span');
+  const box1 = document.querySelector('#about .images div:first-child');
+  const box2 = document.querySelector('#about .images div:nth-child(2)');
+  const box3 = document.querySelector('#about .images div:nth-child(3)');
+  const box4 = document.querySelector('#about .images div:last-child');
+  const box1Title = document.querySelector('#about .images div:first-child span');
+  const box2Title = document.querySelector('#about .images div:nth-child(2) span');
+  const box3Title = document.querySelector('#about .images div:nth-child(3) span');
+  const box4Title = document.querySelector('#about .images div:last-child span');
 
   const aboutTL = gsap.timeline({
     scrollTrigger: {
@@ -223,7 +217,7 @@
 
   // ScrollTrigger untuk restart animasi setiap kali masuk
   ScrollTrigger.create({
-    trigger: "#tentang",
+    trigger: "#about",
     start: "+=30% center",
     onEnter: () => {
       counterObj.val = 0; // reset angka
@@ -232,22 +226,43 @@
   });
 // #endregion ========== TENTANG =============
 
-// #region ============= KENAPA =============
-  const alasan = document.querySelector('#kenapa .alasan');
+// #region ============= USAHA SENDIRI =============
+  const imgProb = document.querySelectorAll('#selfEmployed .big-image img');
+  const putarProb = document.querySelectorAll('#selfEmployed .rotating-prob');
+  const putarProbTeks = document.querySelectorAll('#selfEmployed .rotating-prob .item-prob div span b');
 
-  const alasanTL = gsap.timeline({
+  const putarProbAnim = gsap.timeline({
     scrollTrigger: {
-      trigger: "#tentang",
-      start: "bottom center",
-      end: "+=55% center",
-      scrub: true
+      trigger: "#selfEmployed",
+      start: "top center", // mulai saat section muncul di tengah viewport
+      toggleActions: "play none none reverse"
     }
   });
 
-  alasanTL.from(alasan, { transform: "scale(.75)", opacity: 0 })
-// #endregion ========== KENAPA =============
+  putarProbAnim.fromTo(imgProb, 
+    { y: 400, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 1 }
+  );
+  
+  // Rotasi setiap lingkaran bergantian
+  putarProb.forEach((el, i) => {
+    // setiap elemen berputar 45 derajat lebih banyak dari sebelumnya
+    putarProbAnim.to(el, {
+      rotate: 45 * (i + 1),
+      duration: 0.6,
+      ease: "power1.out"
+    }, i * 0.1); // jeda kecil antara tiap animasi
+  });
 
-// #region ============= PERBEDAAN =============
+  // Setelah rotasi selesai, tampilkan teks
+  putarProbAnim.fromTo(putarProbTeks, 
+    { x: -50, opacity: 0 }, 
+    { x: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power2.out" },
+    ">+=0.2" // mulai sedikit setelah animasi rotasi selesai
+  );  
+// #endregion ========== USAHA SENDIRI =============
+
+// #region ============= NABUNG =============
   document.addEventListener("DOMContentLoaded", function () {
     const slider = document.getElementById("sliderYears");
     const wrapCompare = document.getElementById("wrapCompare");
@@ -355,7 +370,108 @@
     // update saat slider digeser
     slider.addEventListener("input", updateSizes);
   });
-// #endregion ========== PERBEDAAN =============
+// #endregion ========== NABUNG =============
+
+// #region ============= CARA KERJA =============
+  const hiwSection = document.querySelector('#howItWorks');
+  const hiwItems   = gsap.utils.toArray('#howItWorks .list-text .item');
+
+  // Helper: aktifkan semua item dari 0..index (kumulatif). Index < 0 = nonaktif semua.
+  function setActiveUpTo(index) {
+    hiwItems.forEach((el, i) => el.classList.toggle('active', i <= index));
+  }
+
+  // Set awal: item pertama aktif (opsional)
+  setActiveUpTo(0);
+
+  const lastIdx = hiwItems.length - 1;
+
+  const tl = gsap.timeline({
+    defaults: { ease: "none" },
+    scrollTrigger: {
+      trigger: hiwSection,
+      start: "top top",
+      end: () => "+=" + (hiwItems.length * 300),
+      pin: true,
+      scrub: true,
+      anticipatePin: 1,
+      // markers: true,
+
+      // Masuk dari atas: mulai dari item 0
+      onEnter: () => setActiveUpTo(0),
+
+      // Keluar di bawah: pertahankan semua aktif (tetap di item kelima)
+      onLeave: () => setActiveUpTo(lastIdx),
+
+      // Masuk kembali dari bawah: JANGAN reset ke 0 (biarkan scrub/timeline yang atur)
+      // onEnterBack: () => setActiveUpTo(lastIdx), // opsional; bisa dihapus saja
+
+      // Keluar di atas: nonaktifkan semua
+      onLeaveBack: () => setActiveUpTo(-1),
+    }
+  });
+
+  // Bagi timeline menjadi N segmen; tiap segmen kumulatif
+  hiwItems.forEach((el, i) => {
+    tl.from(el, {scale: .96, duration: 0.3 }, i);
+    tl.call(setActiveUpTo, [i], i + 0.001);
+  });
+
+  tl.to({}, { duration: 0.5 });
+// #endregion ========== CARA KERJA =============
+
+
+
+
+
+// #region ============= BENEFIT =============
+  const putar = document.querySelector('#benefit .rotating');
+  const putarCircle1 = document.querySelector('#benefit .rotating .item-wheel:nth-child(8) div');
+  const putarCircle2 = document.querySelector('#benefit .rotating .item-wheel:nth-child(7) div');
+  const putarCircle3 = document.querySelector('#benefit .rotating .item-wheel:nth-child(6) div');
+  const putarCircle4 = document.querySelector('#benefit .rotating .item-wheel:nth-child(5) div');
+  const putarCircle5 = document.querySelector('#benefit .rotating .item-wheel:nth-child(4) div');
+  const putarCircle6 = document.querySelector('#benefit .rotating .item-wheel:nth-child(3) div');
+  const putarCircle7 = document.querySelector('#benefit .rotating .item-wheel:nth-child(2) div');
+  const putarCircle8 = document.querySelector('#benefit .rotating .item-wheel:nth-child(1) div');
+  const naik = document.querySelector('#benefit .moving-stacked');
+  const boxNaik1 = document.querySelector('#benefit .moving-stacked div:nth-child(1)');
+
+  const totalSteps = 8;   // 360 / 45 = 8 step
+  const stepDistance = 200; // jarak naik per step (px)
+
+  const benefitTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#benefit",
+      start: "top top",
+      end: `+=${totalSteps * 100}%`, // tiap step punya ruang scroll sendiri
+      scrub: true,
+      pin: true
+    }
+  });
+
+  for (let i = 1; i <= totalSteps; i++) {
+    benefitTL.to(putar, { rotate: 45 * i })
+             .to(naik, { top: -stepDistance * i + "px" }, "<");
+  }
+  
+// #endregion ========== BENEFIT =============
+
+// #region ============= KENAPA =============
+  const alasan = document.querySelector('#kenapa .alasan');
+  const movingImg = document.querySelector('#kenapa .alasan .right');
+
+  const alasanTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#alasan",
+      start: "bottom bottom",
+      end: "+=100%",
+      scrub: true
+    }
+  });
+
+  alasanTL.to(movingImg, { xPercent: -35, yPercent: 160 })
+// #endregion ========== KENAPA =============
 
 // #region ============= HISTORY =============
   const timelineTL = gsap.timeline({
@@ -392,28 +508,6 @@
     timelineTL.to(dots[i], { backgroundColor: "var(--secondary)", scale: "1", duration: 2 }, "<");
   });
 // #endregion ========== HISTORY =============
-
-// #region ============= VARIAN =============
-  $(document).ready(function() {
-    var contents = {
-      0: '.content-resort1',
-      1: '.content-resort2',
-      2: '.content-resort3',
-    };
-
-    $('.carousel').on('select.flickity', function(event, index) {
-      console.log('Flickity select ' + index);
-
-      for (var key in contents) {
-        if (index == key) {
-          $(contents[key]).addClass('active');
-        } else {
-          $(contents[key]).removeClass('active');
-        }
-      }
-    });
-  });
-// #endregion ========== VARIAN =============
 
 // #region ============= COUNTER PROMO =============
   function getMonthlyCountdown() {
@@ -502,29 +596,6 @@
 
 
 
-
-
-// #region ============= TOGGLE THEME =============
-  document.addEventListener("DOMContentLoaded", function () {
-    const temaSelect = document.getElementById("opsiTema");
-
-    function applyTheme() {
-      const value = temaSelect.value;
-
-      // hapus semua class tema lama
-      document.body.classList.remove("blue", "brown", "orange");
-
-      // tambahkan class sesuai value terpilih
-      document.body.classList.add(value);
-    }
-
-    // jalankan saat pertama kali load
-    applyTheme();
-
-    // jalankan saat berubah
-    temaSelect.addEventListener("change", applyTheme);
-  });
-// #endregion ======= TOGGLE THEME =============
 
 
 
