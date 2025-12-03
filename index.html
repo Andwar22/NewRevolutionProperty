@@ -19,6 +19,8 @@
      <link rel="stylesheet" href="./assets/icons/crumbsicon.css">
     <!-- flickity -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <!-- CSS AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- glightbox -->
@@ -43,13 +45,13 @@
         <div id="menus" class="nav-menu">
             <ul>
                 <li>
-                    <a href="#tentang">tentang Kami</a>
+                    <a href="#about">tentang Kami</a>
                 </li>
                 <li>
-                    <a href="#kenapa">Kenapa property</a>
+                    <a href="#saving">Kenapa property</a>
                 </li>
                 <li>
-                    <a href="#keuntungan">keuntungan</a>
+                    <a href="#benefit">keuntungan</a>
                 </li>
                 <li>
                     <a href="#harga">harga</a>
@@ -114,35 +116,6 @@
             <p>unlock your entrepreneurial journey</p>
             <button id="toggleMuteBtn" class="toggle-sound"><i class="ci-volume-high"></i></button>
         </div>
-        
-        <!-- <div class="all-prop">
-            <div class="list">
-                <div style="--urutan: 1;">
-                    <i class="ci-building-07"></i>
-                    <span>Triyana Resort Carangsari</span>
-                </div>
-                <div style="--urutan: 2;">
-                    <i class="ci-cottage"></i>
-                    <span>Triyana glamping village</span>
-                </div>
-                <div style="--urutan: 3;">
-                    <i class="ci-city-05"></i>
-                    <span>Triyana villa lovina</span>
-                </div>
-                <div style="--urutan: 4;">
-                    <i class="ci-beach"></i>
-                    <span>Triyana beach resort</span>
-                </div>
-                <div style="--urutan: 5;">
-                    <i class="ci-building-03"></i>
-                    <span>Triyana puppy's hotel</span>
-                </div>
-                <div style="--urutan: 6;">
-                    <i class="ci-coffe"></i>
-                    <span>white jazz cafe</span>
-                </div>
-            </div>
-        </div> -->
     </header>
 
     <section id="about">
@@ -181,19 +154,48 @@
                     <span id="visitorCounter"></span>
                     <span>Member Aktif</span>
                 </div>
-                <a href="">
-                    gabung sekarang<i class="ci-chevron-right-double"></i>
+                <a href="#hubungi">
+                    gabung sekarang<i class="ci-arrow-right-double-round"></i>
                 </a>
             </div>
         </div>
     </section>
+
+    <div id="effortless">
+        <div class="title">
+            <p class="subtitle">Usaha sedikit hasil banyak</p>
+        </div>
+
+        <div class="wrapper">
+            <div class="item" data-urut="1">
+                <i class="ci-house-04"></i>
+                <p>Menjadi bagian dari property yang sudah beroperasi</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quidem odio repellendus eum iste ducimus?</p>
+            </div>
+            <div class="item" data-urut="2">
+                <i class="ci-money-receive-flow-02"></i>
+                <p>Bisnis dengan keuntungan besar dari mereferalkan</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quidem odio repellendus eum iste ducimus?</p>
+            </div>
+            <div class="item" data-urut="3">
+                <i class="ci-in-love"></i>
+                <p>Memakai fasilitas kita seumur hidup</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quidem odio repellendus eum iste ducimus?</p>
+            </div>
+            <div class="item" data-urut="4">
+                <i class="ci-chart-evaluation"></i>
+                <p>Kenaikannya harga member dan dapat di tukarkan</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur quidem odio repellendus eum iste ducimus?</p>
+            </div>
+        </div>
+    </div>
 
     <section id="selfEmployed">
         <p class="subtitle">punya usaha sendiri?</p>
 
         <div class="wrapper">
             <div class="big-image">
-                <img src="/assets/images/self-employed-img.png" alt="self employed">
+                <img src="/assets/images/img-self-employed.png" alt="self employed">
             </div>
 
             <div class="wheel-prob">
@@ -293,7 +295,7 @@
                                 <p>Harga tanah <span id="homeValNow"></span></p>
                             </div>
                             <div class="wrap-img">
-                                <img id="homeImg" src="/assets/images/compare-home.png" alt="compare-home">
+                                <img id="homeImg" src="/assets/images/img-compare-home.png" alt="compare-home">
                                 <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="currentColor">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -314,7 +316,7 @@
                                 <p>Uang Rp 100.000 bisa beli <span id="moneyValNow"></span> Kg beras</p>
                             </div>
                             <div class="wrap-img">
-                                <img id="moneyImg" src="/assets/images/compare-money.png" alt="compare-money">
+                                <img id="moneyImg" src="/assets/images/img-compare-money.png" alt="compare-money">
                                 <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="currentColor">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -367,35 +369,35 @@
                 <p class="subtitle">cara kerja<br>RV Membership</p>
                 <div class="list-text">
                     <div class="item">
-                        <i class="ci-agreement-03"></i>
+                        <span>1</span>
                         <div>
                             <p>Beli membership seharga Rp25 juta</p>
                             <p>Dapatkan akses eksklusif untuk menjadi bagian dari kami.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <i class="ci-agreement-01"></i>
+                        <span>1</span>
                         <div>
                             <p>Referensikan teman ke properti kami</p>
-                            <p>Rekomendasikan properti unggulan kami kepada teman atau relasi potensial Anda.</p>
+                            <p>Rekomendasikan properti unggulan kami kepada teman atau relasi Anda.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <i class="ci-city-03"></i>
+                        <span>3</span>
                         <div>
                             <p>Reservasi ditangani tim RV</p>
                             <p>Tim profesional kami akan mengelola seluruh proses reservasi hingga selesai.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <i class="ci-payment-success-02"></i>
+                        <span>4</span>
                         <div>
                             <p>Dapat 40% dari nett profit</p>
                             <p>Nikmati komisi hingga 40% dari keuntungan bersih setiap transaksi sukses.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <i class="ci-wallet-02-1"></i>
+                        <span>5</span>
                         <div>
                             <p>Komisi dikirim ke e-wallet member</p>
                             <p>Pembayaran komisi akan dikirim langsung ke saldo e-wallet Anda.</p>
@@ -406,173 +408,16 @@
         </div>
     </section>
 
-
-
-
-
-
-
-    <!-- <div class="solusi">
-        <p class="subtitle">solusi cerdas untukmu</p>
-        <p class="desc">
-            Bisnis Property masa kini dengan hasil besar dan resiko rendah. Cocok untuk semua kalangan,bahkan pemula dalam bisnis property
-        </p>
-    </div> -->
-
-    <section id="benefit">
-        <div class="wrapper">
-            <div class="left">
-                <div class="rv-logo">
-                    <p>Benefit</p>
-                    <p>RV Membership</p>
-                </div>
-
-                <div class="wheel">
-                    <div class="rotating">
-                        <div class="item-wheel">
-                            <div><span><i class='ci-dashboard-square-add'></i></span></div>
-                        </div>
-                        <div class="item-wheel">
-                            <div><span><i class='ci-unavailable'></i></span></div>
-                        </div>
-                        <div class="item-wheel">
-                            <div><span><i class='ci-cloud-download'></i></span></div>
-                        </div>
-                        <div class="item-wheel">
-                            <div><span><i class='ci-download-circle-02'></i></span></div>
-                        </div>
-                        <div class="item-wheel">
-                            <div><span><i class='ci-download-square-02'></i></span></div>
-                        </div>
-                        <div class="item-wheel">
-                            <div><span><i class='ci-notification-01'></i></span></div>
-                        </div>
-                        <div class="item-wheel">
-                            <div><span><i class='ci-notification-block-01'></i></span></div>
-                        </div>
-                        <div class="item-wheel"> <!-- ke 1 -->
-                            <div><span><i class='ci-notification-bubble'></i></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="right">
-                <div class="stacked">
-                    <div class="moving-stacked">
-                        <div class="item-stacked">
-                            <p>1. Profit Sharing 40%</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                        <div class="item-stacked">
-                            <p>2. Diskon 25%</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                        <div class="item-stacked">
-                            <p>3. Free Stay 1 Malam/Tahun</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                        <div class="item-stacked">
-                            <p>4. Nilai Membership Naik</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                        <div class="item-stacked">
-                            <p>5. Bisa Dijual Kembali</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                        <div class="item-stacked">
-                            <p>6. Bisa Ditukar Jadi Properti</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                        <div class="item-stacked">
-                            <p>7. Legalitas Aman</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                        <div class="item-stacked">
-                            <p>8. Dan benefit lainnya</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="kenapa">
-        <p class="subtitle">kenapa investasi property?</p>
-
-        <div class="alasan" id="alasan">
-            <div class="left">
-                <div class="text">
-                    <div>
-                        <span>capital gain</span>
-                        <span>
-                            Nilai properti akan naik terus menerus dan secara konsisten karena lahan properti semakin terbatas sehingga nilai property semakin tinggi.
-                        </span>
-                        <i class="ci-coins-02"></i>
-                    </div>
-                    <div>
-                        <span>dapat dinikmati</span>
-                        <span>
-                            Selama Anda memiliki properti tersebut, Anda dapat menggunakan properti tersebut sesuai dengan fungsinya.
-                        </span>
-                        <i class="ci-beach"></i>
-                    </div>
-                    <div>
-                        <span>dapat dibisniskan</span>
-                        <span>
-                            Properti yang Anda miliki, dapat Anda sewakan atau dikerjasamakan sehingga menghasilkan pendapatan di luar kenaikan harga
-                            properti itu sendiri.
-                        </span>
-                        <i class="ci-briefcase-money"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="right">
-                <img src="/assets/images/img-alasan1.jpg" alt="">
-                <img src="/assets/images/img-alasan2.png" alt="">
-            </div>
-        </div>
-
-        <div class="kendala">
-            <div class="title">
-                <p class="subtitle">kendala memiliki property</p>
-                <p class="desc">
-                    Kenaikan harga properti yang pesat sering menjadi penghalang bagi calon pembeli, khususnya generasi muda.
-                    Berikut beberapa kendala utama yang sering dihadapi:
-                </p>
-            </div>
-            <div class="kendala-item">
-                <div class="item">
-                    <div>
-                        <span>01</span>
-                        <span>Kurangnya pengalaman dalam hal legalitas properti</span>
-                    </div>
-                    <div>
-                        <span>02</span>
-                        <span>Minimnya inovasi dalam skema kepemilikan</span>
-                    </div>
-                    <div>
-                        <span>03</span>
-                        <span>Keterbatasan dana dan akses pembiayaan</span>
-                    </div>
-                    <div>
-                        <span>04</span>
-                        <span>Harga yang semakin lama semakin naik</span>
-                    </div>
-                    <div>
-                        <span>05</span>
-                        <span>Tingginya bunga kredit</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>    
-
     <section id="revolution">
+        <div class="solusi">
+            <p class="subtitle">solusi cerdas untukmu</p>
+            <p class="desc">
+                Bisnis Property masa kini dengan hasil besar dan resiko rendah. Cocok untuk semua kalangan, bahkan pemula dalam bisnis property
+            </p>
+        </div>
+
         <div class="building">
-            <img src="./assets/images/revolution-bg.png" alt="glamping">
+            <img src="./assets/images/img-revolution-main.png" alt="glamping">
         </div>
 
         <div class="revo-desc">
@@ -584,40 +429,97 @@
                         <path fill="currentcolor" stroke="currentcolor" stroke-width="2" d="M143 0l-74 119 -35 -57 -22 0 0 -15 47 0c10,0 18,-8 18,-18l0 -15 -77 0 0 -15 91 0 0 30c0,18 -15,32 -32,32l-8 0 18 29 57 -91 17 0z" />
                     </g>
                 </svg>
-                <p class="subtitle">revolution property</p>
-                <p class="desc">Revolution Property adalah perusahaan dibawah naungan PT Adnyana International Development Membangun Sebuah Komunitas Milenial Cerdas, Sebuah Trobosan Besar Dalam Dunia Bisnis Property!</p>
+                <p class="subtitle">revolution membership</p>
             </div>
 
             <div class="keunggulan">
-                <div class="image"></div>
-
                 <div class="text">
                     <div class="item">
-                        <i class="ci-burger"></i>
-                        <p>000</p>
-                        <p>Mempermudah Kamu memiliki bisnis besar dan menambah aset dalam bentuk bisnis property dengan modal relatif kecil dan resiko rendah!</p>
+                        <img src="./assets/images/img-revolution-poin1.png" alt="">
+                        <p>Fast Track To Entrepeneur</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui soluta enim, nihil dolores consequatur.</p>
                     </div>
                     <div class="item">
-                        <i class="ci-burger"></i>
-                        <p>000</p>
-                        <p>Masuk anggota pemilik bisnis property yang merupakan salah satu bisnis dengan nilai sewa tertinggi di dunia</p>
+                        <img src="./assets/images/img-revolution-poin2.png" alt="">
+                        <p>Privilage RV Membership</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui soluta enim, nihil dolores consequatur.</p>
                     </div>
                     <div class="item">
-                        <i class="ci-burger"></i>
-                        <p>000</p>
-                        <p>Memiliki bisnis properti tanpa beban biaya perawatan setiap bulannnya</p>
+                        <img src="./assets/images/img-revolution-poin3.png" alt="">
+                        <p>Fasilitas yang Terus Bertambah</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui soluta enim, nihil dolores consequatur.</p>
                     </div>
                     <div class="item">
-                        <i class="ci-burger"></i>
-                        <p>000</p>
-                        <p>Tanpa bunga dan tanpa hutang bank hanya 250ribu/Share member</p>
+                        <img src="./assets/images/img-revolution-poin4.png" alt="">
+                        <p>Nilai Investasi Semakin Naik</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui soluta enim, nihil dolores consequatur.</p>
                     </div>
                     <div class="item">
-                        <i class="ci-burger"></i>
-                        <p>000</p>
-                        <p>Kamu akan dididik menjadi pribadi unggul baik di dunia bisnis atau kehidupan sehari-hari</p>
+                        <img src="./assets/images/img-revolution-poin5.png" alt="">
+                        <p>Dapat di Tukar Dengan Property</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui soluta enim, nihil dolores consequatur.</p>
+                    </div>
+                    <div class="item">
+                        <img src="./assets/images/img-revolution-poin6.png" alt="">
+                        <p>Aman & Dapat di Wariskan</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui soluta enim, nihil dolores consequatur.</p>
                     </div>
                 </div>
+
+                <div class="running-img" aria-label="Running Gallery">
+                    <div class="track">
+                        <div>
+                            <span>VVIP Glamping</span>
+                            <img src="/assets/images/img-runprop-gall-carang1.jpg" alt="Properti 1" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <span>Triyana Resort Carangsari</span>                            
+                            <img src="/assets/images/img-runprop-gall-carang5.jpg" alt="Properti 2" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <span>Lukisan Bali</span>                            
+                            <img src="/assets/images/img-runprop-gall-jazz1.jpg" alt="Properti 3" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <span>Outdoor cafe</span>                            
+                            <img src="/assets/images/img-runprop-gall-jazz4.jpg" alt="Properti 4" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <span>play with puppies</span>                            
+                            <img src="/assets/images/img-runprop-gall-pupp1.jpg" alt="Properti 5" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <span>Puppy's hotel</span>                            
+                            <img src="/assets/images/img-runprop-gall-pupp2.jpg" alt="Properti 6" loading="lazy" decoding="async">
+                        </div>
+
+                        <!-- for smooth loop -->
+                        <div>
+                            <span>VVIP Glamping</span>                            
+                            <img src="/assets/images/img-runprop-gall-carang1.jpg" alt="" aria-hidden="true">
+                        </div>
+                        <div>
+                            <span>Triyana Resort Carangsari</span>                            
+                            <img src="/assets/images/img-runprop-gall-carang5.jpg" alt="" aria-hidden="true">
+                        </div>
+                        <div>
+                            <span>lukisan bali</span>                            
+                            <img src="/assets/images/img-runprop-gall-jazz1.jpg" alt="" aria-hidden="true">
+                        </div>
+                        <div>
+                            <span>Outdoor cafe</span>                            
+                            <img src="/assets/images/img-runprop-gall-jazz4.jpg" alt="" aria-hidden="true">
+                        </div>
+                        <div>
+                            <span>play with puppies</span>                            
+                            <img src="/assets/images/img-runprop-gall-pupp1.jpg" alt="" aria-hidden="true">
+                        </div>
+                        <div>
+                            <span>Puppy's hotel</span>                            
+                            <img src="/assets/images/img-runprop-gall-pupp2.jpg" alt="" aria-hidden="true">
+                        </div>
+                    </div>
+                </div>                
             </div>
 
             <!-- <div id="history" class="history">
@@ -694,244 +596,78 @@
         </div>
     </section>
 
-    <section id="runningProp">
-        <div class="title">
-            <p class="subtitle">Property yang sudah beroperasi</p>
-            <p class="desc">
-                Jika kamu sudah sejauh ini, Maka kami yakin kamu adalah orang yang pantas untuk sukses! Sukses itu nggak instan, semua butuh proses,
-                dan proses itu dimulai dari pilihanmu hari ini!
-                <br>
-                Kami memiliki lokasi yang strategis untuk memulai bisnis property dan kalian dapat menggunakan dengan Hak Bisnis maupun Hak Diskon.
-            </p>
-        </div>
+    <section id="benefit">
+        <div class="wrapper">
+            <div class="left">
+                <div class="rv-logo">
+                    <p>Benefit</p>
+                    <p>RV Membership</p>
+                </div>
 
-        <div class="lokasi-nama">
-            <div class="resort">
-                <div class="carousel carousel-resort" data-flickity='{"wrapAround": true, "autoPlay": false, "pauseAutoPlayOnHover": false }'>
-                    <div class="carousel-cell">
-                        <div class="resort-item-head">
-                            <div class="resort-item-txt">
-                                <div>
-                                    <p>Triyana Resort Carangsari</p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sequi consectetur illo dolorum et consequuntur,
-                                        aspernatur vero voluptas optio aliquam?
-                                    </p>
-                                </div>
-                                <a href="" target="_blank">get directions</a>
-                            </div>
+                <div class="wheel">
+                    <div class="rotating">
+                        <div class="item-wheel">
+                            <div><span><i class="ci-stars"></i></span></div>
                         </div>
-                        
-                        <div class="desc-resort">
-                            <div class="desc-resort-pics">
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress01.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Main Gate</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress01.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress02.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Main Road</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress02.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress03.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>VVIP glamping</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress03.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress04.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>VIP glamping</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress04.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress05.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Lobby</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress05.webp" alt="image" />
-                                </a>
-                            </div>
-                            
-                            <!-- <div class="desc-resort-around">
-                                <div class="map">
-                                    <img src="./assets/images/bali-map.png" alt="map">
-                                </div>
-                            </div> -->
+                        <div class="item-wheel">
+                            <div><span><i class="ci-file-star"></i></span></div>
+                        </div>
+                        <div class="item-wheel">
+                            <div><span><i class="ci-money-exchange-01"></i></span></div>
+                        </div>
+                        <div class="item-wheel">
+                            <div><span><i class="ci-briefcase-dollar"></i></span></div>
+                        </div>
+                        <div class="item-wheel">
+                            <div><span><i class="ci-waterfall-up-02"></i></span></div>
+                        </div>
+                        <div class="item-wheel">
+                            <div><span><i class="ci-bed-double"></i></span></div>
+                        </div>
+                        <div class="item-wheel">
+                            <div><span><i class="ci-percent"></i></span></div>
+                        </div>
+                        <div class="item-wheel"> <!-- ke 1 -->
+                            <div><span><i class="ci-money-bag-02"></i></span></div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="carousel-cell">
-                        <div class="resort-item-head">
-                            <div class="resort-item-txt">
-                                <div>
-                                    <p>Triyana Resort Carangsari</p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sequi consectetur illo dolorum et consequuntur,
-                                        aspernatur vero voluptas optio aliquam?
-                                    </p>
-                                </div>
-                                <a href="" target="_blank">get directions</a>
-                            </div>
+            <div class="right">
+                <div class="stacked">
+                    <div class="moving-stacked">
+                        <div class="item-stacked">
+                            <p>1. Profit Sharing 40%</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
                         </div>
-                        
-                        <div class="desc-resort">
-                            <div class="desc-resort-pics">
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress01.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Main Gate</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress01.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress02.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Main Road</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress02.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress03.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>VVIP glamping</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress03.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress04.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>VIP glamping</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress04.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress05.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Lobby</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress05.webp" alt="image" />
-                                </a>
-                            </div>
-                            
-                            <!-- <div class="desc-resort-around">
-                                <div class="map">
-                                    <img src="./assets/images/bali-map.png" alt="map">
-                                </div>
-                            </div> -->
+                        <div class="item-stacked">
+                            <p>2. Diskon 25%</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
                         </div>
-                    </div>
-                    <div class="carousel-cell">
-                        <div class="resort-item-head">
-                            <div class="resort-item-txt">
-                                <div>
-                                    <p>Triyana Resort Carangsari</p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sequi consectetur illo dolorum et consequuntur,
-                                        aspernatur vero voluptas optio aliquam?
-                                    </p>
-                                </div>
-                                <a href="" target="_blank">get directions</a>
-                            </div>
+                        <div class="item-stacked">
+                            <p>3. Free Stay 1 Malam/Tahun</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
                         </div>
-                        
-                        <div class="desc-resort">
-                            <div class="desc-resort-pics">
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress01.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Main Gate</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress01.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress02.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Main Road</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress02.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress03.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>VVIP glamping</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress03.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress04.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>VIP glamping</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress04.webp" alt="image" />
-                                </a>
-                                <a href="https://rv-affiliate.azureedge.net/web-replika/bgProgress05.webp"
-                                    class="glightbox"
-                                    data-width="1000px"
-                                    data-height="auto"
-                                    data-title="My title"
-                                    data-description="description here"
-                                    data-desc-position="right">
-                                    <span>Lobby</span>
-                                    <img src="https://rv-affiliate.azureedge.net/web-replika/bgProgress05.webp" alt="image" />
-                                </a>
-                            </div>
-                            
-                            <!-- <div class="desc-resort-around">
-                                <div class="map">
-                                    <img src="./assets/images/bali-map.png" alt="map">
-                                </div>
-                            </div> -->
+                        <div class="item-stacked">
+                            <p>4. Nilai Membership Naik</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
+                        </div>
+                        <div class="item-stacked">
+                            <p>5. Bisa Dijual Kembali</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
+                        </div>
+                        <div class="item-stacked">
+                            <p>6. Bisa Ditukar Jadi Properti</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
+                        </div>
+                        <div class="item-stacked">
+                            <p>7. Legalitas Aman</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
+                        </div>
+                        <div class="item-stacked">
+                            <p>8. Dan benefit lainnya</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores placeat magni earum necessitatibus eos distinctio exercitationem beatae enim voluptatum, at consequatur expedita doloribus quia dolorum quasi consequuntur odio perspiciatis ab.</p>
                         </div>
                     </div>
                 </div>
@@ -939,12 +675,258 @@
         </div>
     </section>
 
-    <section id="benefitDetail" style="display: grid; place-items: center; background-color: var(--primary);">
-        <p class="subtitle" style="color: #fff;">WADAH BENEFIT DETAIL</p>
+    <section id="runningProp">
+        <div class="title">
+            <p class="subtitle">Property yang sudah beroperasi</p>
+            <p class="desc">
+                Jika kamu sudah sejauh ini, Maka kami yakin kamu adalah orang yang pantas untuk sukses!
+                <br>Sukses itu nggak instan, semua butuh proses, dan proses itu dimulai dari pilihanmu hari ini!
+                Kami memiliki lokasi yang strategis untuk memulai bisnis property dan kalian dapat menggunakan dengan Hak Bisnis maupun Hak Diskon.
+            </p>
+        </div>
+
+        <div class="lokasi-nama">
+            <div class="resort">
+                <div class="carousel carousel-resort" data-flickity='{"wrapAround": true, "autoPlay": false, "pauseAutoPlayOnHover": false }'>
+                    <!--Carangsari-->
+                    <div class="carousel-cell" style="--head-runProp: url(/assets/images/img-runprop-head-carang.jpg);">
+                        <div class="resort-item-head">
+                            <div class="resort-item-txt">
+                                <div>
+                                    <p>Triyana Resort Carangsari</p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sequi consectetur illo dolorum et consequuntur,
+                                        aspernatur vero voluptas optio aliquam?
+                                    </p>
+                                </div>
+                                <a href="https://maps.app.goo.gl/9WsdmTUzH6j3X1Fd6" target="_blank">get directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="desc-resort">
+                            <div class="desc-resort-pics">
+                                <a href="/assets/images/img-runprop-gall-carang1.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>VVIP Room</span>
+                                    <img src="/assets/images/img-runprop-gall-carang1.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-carang2.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>VIP Room</span>
+                                    <img src="/assets/images/img-runprop-gall-carang2.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-carang3.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>VVIP Bathroom</span>
+                                    <img src="/assets/images/img-runprop-gall-carang3.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-carang4.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>VIP glamping</span>
+                                    <img src="/assets/images/img-runprop-gall-carang4.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-carang5.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>VVIP Glamping</span>
+                                    <img src="/assets/images/img-runprop-gall-carang5.jpg" alt="image" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--White Jazz-->
+                    <div class="carousel-cell" style="--head-runProp: url(/assets/images/img-runprop-head-jazz.jpg);">
+                        <div class="resort-item-head">
+                            <div class="resort-item-txt">
+                                <div>
+                                    <p>white jazz cafe</p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sequi consectetur illo dolorum et consequuntur,
+                                        aspernatur vero voluptas optio aliquam?
+                                    </p>
+                                </div>
+                                <a href="https://maps.app.goo.gl/B9HjMsSYVQZMZPEE6" target="_blank">get directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="desc-resort">
+                            <div class="desc-resort-pics">
+                                <a href="/assets/images/img-runprop-gall-jazz1.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>indoor cafe</span>
+                                    <img src="/assets/images/img-runprop-gall-jazz1.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-jazz2.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>outdoor cafe</span>
+                                    <img src="/assets/images/img-runprop-gall-jazz2.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-jazz3.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>coffe all the time</span>
+                                    <img src="/assets/images/img-runprop-gall-jazz3.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-jazz4.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>delicious food</span>
+                                    <img src="/assets/images/img-runprop-gall-jazz4.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-jazz5.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>latte art</span>
+                                    <img src="/assets/images/img-runprop-gall-jazz5.jpg" alt="image" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Puppy's-->
+                    <div class="carousel-cell" style="--head-runProp: url(/assets/images/img-runprop-head-pupp.jpg);">
+                        <div class="resort-item-head">
+                            <div class="resort-item-txt">
+                                <div>
+                                    <p>galeri niang kumpi</p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum sequi consectetur illo dolorum et consequuntur,
+                                        aspernatur vero voluptas optio aliquam?
+                                    </p>
+                                </div>
+                                <a href="https://maps.app.goo.gl/B9HjMsSYVQZMZPEE6" target="_blank">get directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="desc-resort">
+                            <div class="desc-resort-pics">
+                                <a href="/assets/images/img-runprop-gall-pupp1.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>Play with puppy</span>
+                                    <img src="/assets/images/img-runprop-gall-pupp1.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-pupp2.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>puppies</span>
+                                    <img src="/assets/images/img-runprop-gall-pupp2.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-pupp3.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>puppy playground</span>
+                                    <img src="/assets/images/img-runprop-gall-pupp3.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-pupp4.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>playing together</span>
+                                    <img src="/assets/images/img-runprop-gall-pupp4.jpg" alt="image" />
+                                </a>
+                                <a href="/assets/images/img-runprop-gall-pupp5.jpg"
+                                    class="glightbox"
+                                    data-width="1000px"
+                                    data-height="auto">
+                                    <span>puppy hotel</span>
+                                    <img src="/assets/images/img-runprop-gall-pupp5.jpg" alt="image" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="nextProp" style="display: grid; place-items: center; background-color: var(--primary);">
-        <p class="subtitle" style="color: #fff;">WADAH NEXT DEVELOPMET</p>
+    <section id="nextProp">
+        <div class="title">
+            <p class="subtitle">our next development</p>
+        </div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide plotted">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>Triyana Nusa Penida</span>
+                    </div>
+                    <img src="/assets/images/img-nexdev1.jpg" alt="">
+                </div>
+                <div class="swiper-slide plotted">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>Triyana Beach Front</span>
+                    </div>
+                    <img src="/assets/images/img-nexdev2.jpg" alt="">
+                </div>
+                <div class="swiper-slide plotted">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>Triyana Villa</span>
+                    </div>
+                    <img src="/assets/images/img-nexdev3.jpg" alt="">
+                </div>
+                <div class="swiper-slide plotted">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>Triyana Villa</span>
+                    </div>
+                    <img src="/assets/images/img-nexdev4.jpg" alt="">
+                </div>
+                
+                <div class="swiper-slide">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>******</span>
+                    </div>
+                    <img src="https://img.freepik.com/free-photo/pink-confetti-blue-marble-textured-background_53876-104808.jpg?uid=R94106727&ga=GA1.1.1876816903.1764566077&semt=ais_hybrid&w=740&q=80" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>******</span>
+                    </div>
+                    <img src="https://img.freepik.com/free-photo/pink-confetti-blue-marble-textured-background_53876-104808.jpg?uid=R94106727&ga=GA1.1.1876816903.1764566077&semt=ais_hybrid&w=740&q=80" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>******</span>
+                    </div>
+                    <img src="https://img.freepik.com/free-photo/pink-confetti-blue-marble-textured-background_53876-104808.jpg?uid=R94106727&ga=GA1.1.1876816903.1764566077&semt=ais_hybrid&w=740&q=80" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <span>COMING SOON</span>
+                        <span>******</span>
+                    </div>
+                    <img src="https://img.freepik.com/free-photo/pink-confetti-blue-marble-textured-background_53876-104808.jpg?uid=R94106727&ga=GA1.1.1876816903.1764566077&semt=ais_hybrid&w=740&q=80" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
     </section>
 
     <section id="testimoni">
@@ -952,59 +934,59 @@
             <div class="wrap">
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/portrait-smiling-young-businesswoman-standing-with-her-arm-crossed-against-gray-wall_23-2147943827.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi1.jpg" alt="potrait">
                     </div>
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/front-view-happy-man-holding-contract_23-2148230755.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="potrait">
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/brunette-businesswoman-posing_23-2148142767.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="potrait">
-                    </div>
-                    <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi2.jpg" alt="potrait">
                     </div>
                 </div>
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/international-day-education-celebration_23-2150930930.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi3.jpg" alt="potrait">
+                    </div>
+                    <div class="photo">
+                        <img src="/assets/images/img-testi4.jpg" alt="potrait">
                     </div>
                 </div>
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-female-nurse-hospital_23-2150796662.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi5.jpg" alt="potrait">
                     </div>
                 </div>
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/front-view-smiley-businesswoman-working-with-smartphone-laptop_23-2148788872.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi6.jpg" alt="potrait">
                     </div>
                 </div>
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/businessman_1368-9078.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi7.jpg" alt="potrait">
                     </div>
                 </div>
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/stylish-businesswoman-with-clipboard-city_23-2147989604.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi8.jpg" alt="potrait">
                     </div>
                 </div>
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917246.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&w=740&q=80" alt="potrait">
-                    </div>
-                    <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/brunette-businesswoman-showing-her-tablet_23-2148142790.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi9.jpg" alt="potrait">
                     </div>
                 </div>
                 <div class="column">
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-female-nurse-hospital_23-2150796724.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi10.jpg" alt="potrait">
                     </div>
                     <div class="photo">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businessman_23-2150917002.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&w=740&q=80" alt="potrait">
+                        <img src="/assets/images/img-testi11.jpg" alt="potrait">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="photo">
+                        <img src="/assets/images/img-testi12.jpg" alt="potrait">
+                    </div>
+                    <div class="photo">
+                        <img src="/assets/images/img-testi13.jpg" alt="potrait">
                     </div>
                 </div>
             </div>
@@ -1024,12 +1006,15 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        Awalnya saya ragu untuk berinvestasi di properti ini, tapi setelah melihat konsep dan potensi keuntungannya,
+                        saya benar-benar yakin. Sekarang, setiap bulan saya menikmati hasil pasif yang stabil. Terima kasih RV Membership.
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text1.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>Andreas</span>
+                            <span>Owner Surabaya</span>
                         </div>
                     </div>
                 </div>
@@ -1041,12 +1026,16 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        Saya ikut RV Membership tahun lalu, dan sekarang aset saya bukan cuma bertambah nilainya,
+                        tapi juga menghasilkan income dari sewa. Konsep investasinya simple tapi impactful. Recommended banget buat yang mau
+                        mulai dari sekarang.
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text2.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>wayan</span>
+                            <span>Owner Bali</span>
                         </div>
                     </div>
                 </div>
@@ -1058,12 +1047,15 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        RV Membership bukan sekadar investasi  ini gaya hidup. Saya bisa liburan di properti pribadi sekaligus dapat
+                        passive income dari penyewa. Rasanya punya dua keuntungan dalam satu aset.
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text6.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>Clara</span>
+                            <span>Owner Surabaya</span>
                         </div>
                     </div>
                 </div>
@@ -1075,12 +1067,15 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        Yang paling saya suka dari RV Membership adalah transparansi dan profesionalitas timnya. Semua dijelaskan dengan jelas,
+                        tanpa janji manis. Sekarang saya sudah buktiin sendiri hasilnya.
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text5.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>Chika</span>
+                            <span>Owner Jakarta</span>
                         </div>
                     </div>
                 </div>
@@ -1092,12 +1087,16 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        Awalnya saya hanya coba-coba bergabung di RV Membership, tapi ternyata hasilnya jauh di atas ekspektasi.
+                        Properti saya terus naik nilainya, sementara penghasilan pasifnya tetap lancar setiap bulan. Sangat puas
+                        dengan keputusannya.
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text8.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>Akbar</span>
+                            <span>Owner Jogja</span>
                         </div>
                     </div>
                 </div>
@@ -1109,12 +1108,15 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        Saya suka karena sistem RV Membership itu praktis dan terarah. Dari awal sampai hasil, semua prosesnya transparan
+                        dan mudah diikuti. Sekarang saya sudah punya aset yang bekerja untuk saya tanpa harus repot.
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text7.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>Adhiyasa</span>
+                            <span>Owner Bali</span>
                         </div>
                     </div>
                 </div>
@@ -1126,12 +1128,15 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        Bergabung dengan RV Membership bikin saya sadar kalau investasi bisa sekalian jadi gaya hidup. Saya bisa menikmati
+                        liburan di properti sendiri, tapi saat tidak dipakai tetap menghasilkan. Benar-benar solusi cerdas di era sekarang.
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text3.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>Verdiansyah</span>
+                            <span>Owner Jakarta</span>
                         </div>
                     </div>
                 </div>
@@ -1143,18 +1148,34 @@
                         <i class="ci-star-filled"></i>
                         <i class="ci-star-filled"></i>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium cupiditate laudantium natus dolore similique sequi.</p>
+                    <p>
+                        RV Membership memberikan pengalaman investasi yang berbeda. Timnya responsif, data dan progress disampaikan secara terbuka.
+                        Setiap bulan saya lihat hasil nyata, bukan hanya janji di atas kertas. Worth it banget!
+                    </p>
                     <div class="user">
-                        <img src="https://img.freepik.com/free-photo/portrait-elegant-professional-businesswoman_23-2150917250.jpg?uid=R94106727&ga=GA1.1.549765779.1742798408&semt=ais_hybrid&w=740&q=80" alt="profil">
+                        <img src="/assets/images/img-testi-text4.jpg" alt="profil">
                         <div>
-                            <span>Tsubasa</span>
-                            <span>Customer Surabaya</span>
+                            <span>Maharini</span>
+                            <span>Owner Surabaya</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="miniStrip">
+        <div class="wrapper">
+            <div>
+                <p><span id="memberCounter"></span><sup>+</sup></p>
+                <p>Membership</p>
+            </div>
+            <div>
+                <p>7<sup>+</sup> Years</p>
+                <p>Experience</p>
+            </div>
+        </div>
+    </div>
 
     <section id="harga">
         <div class="title">
@@ -1175,22 +1196,24 @@
                     </div>
                     <div class="isi">
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Hak Bisnis 15% Nett Profit</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Diskon Huni Unlimited 15%</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>e-Statement Pembelian</span></div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>fasilitas convert ke RV Property Membership</span>
                         </div>
                     </div>
-                    <button>miliki sekarang</button>
+                    <a href="#hubungi">
+                        miliki sekarang
+                    </a>
                 </div>
             </div>
 
@@ -1217,27 +1240,29 @@
                     </div>
                     <div class="isi">
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Hak Inap 1 Malam / Tahun</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Hak Bisnis 40% Nett Profit</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Diskon Huni Unlimited 25%</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Waarmerking Notaris</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>dapat digunakan juga sebagai DP pembelian SHM/Leasehold</span>
                         </div>
                     </div>
-                    <button>miliki sekarang</button>
+                    <a href="#hubungi">
+                        miliki sekarang
+                    </a>
                 </div>
             </div>
             
@@ -1250,45 +1275,43 @@
                     </div>
                     <div class="isi">
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Hak Inap 7 Malam / Tahun</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Hak Bisnis 50% Nett Profit</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Diskon Huni Unlimited 35%</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>Waarmerking Notaris</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>buyback guarantee 150%</span>
                         </div>
                         <div>
-                            <i class="ci-check-circle-02"></i>
+                            <i class="ci-checkmark-circle-03"></i>
                             <span>program upgrade ke SHM/Leasehold</span>
                         </div>
                     </div>
-                    <button>miliki sekarang</button>
+                    <a href="#hubungi">
+                        miliki sekarang
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="cara-daftar" style="height: 100vh; display: grid; place-items: center; margin-bottom: 10rem; background-color: var(--primary);">
-            <p class="subtitle" style="color: var(--white)">WADAH CARA BERGABUNG</p>
-        </div>
-
         <div class="faq">
             <div class="faq-more">
-                <img src="./assets/images/faq.png" alt="faq">
+                <img src="./assets/images/img-faq.png" alt="faq">
                 <p class="subtitle">Frequently asked questions</p>
                 <p class="desc">Silahkan hubungi kami untuk mendapatkan info lebih lanjut. Tim kami akan siap membantu kebutuhan anda.</p>
-                <a href="#hubungi">hubungi kami<i class="ci-chevron-right-double"></i></a>
+                <a href="#hubungi">hubungi kami<i class="ci-arrow-right-double-round"></i></a>
             </div>
 
             <div class="faq-list">
@@ -1296,7 +1319,7 @@
                     <input type="radio" id="faq1" name="faq" checked>
                     <label for="faq1">
                         <span>Apakah investasi di Revolution Property aman?</span>
-                        <span><i class="ci-chevron-down"></i></span>
+                        <span><i class="ci-arrow-down-01-round"></i></span>
                     </label>
                     <div>
                         <p>Ya. Semua proyek memiliki legalitas jelas, didukung oleh tim hukum, dan dilengkapi dokumen kepemilikan yang bisa diverifikasi.</p>
@@ -1306,7 +1329,7 @@
                     <input type="radio" id="faq2" name="faq">
                     <label for="faq2">
                         <span>Bagaimana cara memulai investasi di Revolution Property?</span>
-                        <span><i class="ci-chevron-down"></i></span>
+                        <span><i class="ci-arrow-down-01-round"></i></span>
                     </label>
                     <div>
                         <p>Cukup daftar melalui website atau hubungi tim kami. Setelah memilih paket, Anda bisa melakukan pembayaran sesuai pilihan harga paket,  lalu mendapatkan bukti kepemilikan secara resmi.</p>
@@ -1316,7 +1339,7 @@
                     <input type="radio" id="faq3" name="faq">
                     <label for="faq3">
                         <span>Apa jenis properti yang dikembangkan?</span>
-                        <span><i class="ci-chevron-down"></i></span>
+                        <span><i class="ci-arrow-down-01-round"></i></span>
                     </label>
                     <div>
                         <p>Kami fokus pada pengembangan rumah cluster, villa, dan properti komersial di lokasi strategis dengan prospek tinggi.</p>
@@ -1326,7 +1349,7 @@
                     <input type="radio" id="faq4" name="faq">
                     <label for="faq4">
                         <span>Bagaimana saya tahu perkembangan proyek?</span>
-                        <span><i class="ci-chevron-down"></i></span>
+                        <span><i class="ci-arrow-down-01-round"></i></span>
                     </label>
                     <div>
                         <p>Kami menyediakan laporan berkala, update proyek melalui email, WhatsApp, serta dashboard member area.</p>
@@ -1336,6 +1359,130 @@
         </div>
     </section>
 
+    <section id="hubungi">
+        <div class="kontak-area">
+            <div class="office-map"></div>
+            <div class="kontak-list">
+                <div class="address">
+                    <p>Office Address</p>
+                    <p>Jl. Tambak Sari No.1, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228</p>
+                    <p><i class="ci-clock-01"></i>Senin - Jumat, Pukul 09:00 - 17.00</p>
+                    <p><i class="ci-call"></i>0895-4334-3933-3</p>
+                    <p><i class="ci-mail-01"></i>info@rvproperty.co.id</p>
+                </div>
+                <div class="socmed">
+                    <div>
+                        <a href="https://www.facebook.com/p/Revolution-Property-Indonesia-100084794607700/" target="_blank">
+                            <i class="ci-facebook-01"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rvproperty.official/" target="_blank">
+                            <i class="ci-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@rvpropertybali" target="_blank">
+                            <i class="ci-tiktok"></i>
+                        </a>
+                    </div>
+                    <a href="https://maps.app.goo.gl/AhoBJeGzdyxd3Eg28" target="_blank">Buka Maps <i class="ci-navigation-01"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-area">
+            <div class="title">
+                <p class="subtitle">hubungi kami</p>
+                <p class="desc">
+                    Silahkan lengkapi informasi berikut, tim kami akan menghubungi anda sesegera mungkin untuk memberikan informasi lebih lanjut.     
+                </p>
+            </div>
+
+            <form onsubmit="userAction(event)" action="#hubungi" id="myForm">
+                <label>
+                    <input type="text" placeholder="&nbsp;" required id="form-nama">
+                    <span>Nama</span>
+                </label>
+                <label>
+                    <input type="number" placeholder="&nbsp;" required id="form-hape">
+                    <span>Handphone</span>
+                </label>
+                <label>
+                    <input type="email" placeholder="&nbsp;" required id="form-email">
+                    <span>Email</span>
+                </label>
+                <label>
+                    <textarea rows="4" placeholder="&nbsp;" required id="form-pesan"></textarea>
+                    <span>Pesan Anda</span>
+                </label>
+                <button type="submit" id="kirimEmail">
+                    <span>Kirim Pesan</span>
+                    <span class="spinner-border"></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="wrap">
+            <div class="logo">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="853px" version="1.1"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        viewBox="0 0 143 119" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">   
+                        <g id="Layer_x0020_1">
+                            <path fill="currentcolor" stroke="currentcolor" stroke-width="2" d="M143 0l-74 119 -35 -57 -22 0 0 -15 47 0c10,0 18,-8 18,-18l0 -15 -77 0 0 -15 91 0 0 30c0,18 -15,32 -32,32l-8 0 18 29 57 -91 17 0z" />
+                        </g>
+                    </svg>
+                </div>
+                <p>revolution property</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum doloremque laboriosam perferendis eaque voluptatibus sunt repudiandae deleniti exercitationem omnis molestias?</p>
+            </div>
+            <div class="navigasi">
+                <p>Navigasi</p>
+                <div>
+                    <ul>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#saving">Kenapa Property</a></li>
+                        <li><a href="#howItWorks">cara kerja</a></li>
+                        <li><a href="#benefit">Keuntungan</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#harga">Harga</a></li>
+                        <li><a href="#testimoni">kata mereka</a></li>
+                        <li><a href="#hubungi">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="member">
+                <div>
+                    <p>Member Area</p>
+                    <p>Daftar aplikasi Member Area dan nikmati berbagai kemudahan dan layanan eksklusif dari kami.</p>
+                    <a href="https://membernew.revolutionproperty.id/" target="_blank">
+                        Daftar Sekarang
+                        <i class="ci-arrow-right-double-round"></i>
+                    </a>
+                </div>
+                <div>
+                    <img src="./assets/images/img-member-app.png" alt="member area">
+                </div>
+            </div>
+        </div>
+        
+        <div class="mark">
+            <div>
+                <a href="https://www.facebook.com/p/Revolution-Property-Indonesia-100084794607700/" target="_blank">
+                    <i class="ci-facebook-01"></i>
+                </a>
+                <a href="https://www.instagram.com/rvproperty.official/" target="_blank">
+                    <i class="ci-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@rvpropertybali" target="_blank">
+                    <i class="ci-tiktok"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> - Revolution Membership</p>
+        </div>
+    </footer>
+
+    <!--
     <section id="promo">
         <div class="promo-wrap">
             <div class="promo-head">
@@ -1428,114 +1575,7 @@
             <a href="">ambil promonya sekarang juga<i class="ci-chevron-right-double"></i></a>
         </div>
     </section>
-
-    <section id="hubungi">
-        <div class="kontak-area">
-            <div class="office-map"></div>
-            <div class="kontak-list">
-                <div class="address">
-                    <p>Office Address</p>
-                    <p>Jl. Tambak Sari No.1, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228</p>
-                    <p><i class="ci-clock"></i>Senin - Jumat, Pukul 09:00 - 17.00</p>
-                    <p><i class="ci-email-lock"></i>0895-4334-3933-3</p>
-                    <p><i class="ci-email"></i>info@rvproperty.co.id</p>
-                </div>
-                <div class="socmed">
-                    <div>
-                        <a href="https://www.facebook.com/p/Revolution-Property-Indonesia-100084794607700/" target="_blank"><i class="ci-love"></i></a>
-                        <a href="https://www.instagram.com/rvproperty.official/" target="_blank"><i class="ci-love"></i></a>
-                        <a href="https://www.tiktok.com/@rvpropertybali" target="_blank"><i class="ci-love"></i></a>
-                    </div>
-                    <a href="https://maps.app.goo.gl/AhoBJeGzdyxd3Eg28" target="_blank">Buka Maps <i class="ci-navigation"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-area">
-            <div class="title">
-                <p class="subtitle">hubungi kami</p>
-                <p class="desc">
-                    Silahkan lengkapi informasi berikut, tim kami akan menghubungi anda sesegera mungkin untuk memberikan informasi lebih lanjut.     
-                </p>
-            </div>
-
-            <form onsubmit="userAction(event)" action="#hubungi" id="myForm">
-                <label>
-                    <input type="text" placeholder="&nbsp;" required id="form-nama">
-                    <span>Nama</span>
-                </label>
-                <label>
-                    <input type="number" placeholder="&nbsp;" required id="form-hape">
-                    <span>Handphone</span>
-                </label>
-                <label>
-                    <input type="email" placeholder="&nbsp;" required id="form-email">
-                    <span>Email</span>
-                </label>
-                <label>
-                    <textarea rows="4" placeholder="&nbsp;" required id="form-pesan"></textarea>
-                    <span>Pesan Anda</span>
-                </label>
-                <button type="submit" id="kirimEmail">
-                    <span>Kirim Pesan</span>
-                    <span class="spinner-border"></span>
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <div class="wrap">
-            <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="853px" version="1.1"
-                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                    viewBox="0 0 143 119" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">   
-                    <g id="Layer_x0020_1">
-                        <path fill="currentcolor" stroke="currentcolor" stroke-width="2" d="M143 0l-74 119 -35 -57 -22 0 0 -15 47 0c10,0 18,-8 18,-18l0 -15 -77 0 0 -15 91 0 0 30c0,18 -15,32 -32,32l-8 0 18 29 57 -91 17 0z" />
-                    </g>
-                </svg>
-                <p>revolution<br>property</p>
-            </div>
-            <div class="navigasi">
-                <p>Navigasi</p>
-                <div>
-                    <ul>
-                        <li><a href="#tentang">Tentang Kami</a></li>
-                        <li><a href="#kenapa">Kenapa Property</a></li>
-                        <li><a href="#history">History</a></li>
-                        <li><a href="#keuntungan">Keuntungan</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#harga">Harga</a></li>
-                        <li><a href="#penawaran">Penawaran Spesial</a></li>
-                        <li><a href="#hubungi">Hubungi Kami</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="member">
-                <div>
-                    <p>Member Area</p>
-                    <p>Daftar aplikasi Member Area dan nikmati berbagai kemudahan dan layanan eksklusif dari kami.</p>
-                    <a href="https://membernew.revolutionproperty.id/" target="_blank">
-                        Daftar Sekarang
-                        <i class="ci-chevron-right-double"></i>
-                    </a>
-                </div>
-                <div>
-                    <img src="./assets/images/member-app.png" alt="member area">
-                </div>
-            </div>
-        </div>
-        
-        <div class="mark">
-            <div>
-                <a href="https://www.facebook.com/p/Revolution-Property-Indonesia-100084794607700/" target="_blank"><i class="ci-love"></i></a>
-                <a href="https://www.instagram.com/rvproperty.official/" target="_blank"><i class="ci-love"></i></a>
-                <a href="https://www.tiktok.com/@rvpropertybali" target="_blank"><i class="ci-love"></i></a>
-            </div>
-            <p class="copyright">&copy; <span id="year"></span> Revolution Property.</p>
-        </div>
-    </footer>
+    -->
 
     <!-- Back To Top -->
     <button onclick="backToTop()" id="bttBtn">
@@ -1554,6 +1594,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <!-- Flickity -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var swiper = new Swiper('.swiper', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: true,
+          },
+          loop: true,
+          pagination: { el: '.swiper-pagination', clickable: true },
+        });
+      });
+    </script>
     <!--AOS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

@@ -413,16 +413,12 @@
 
   // Bagi timeline menjadi N segmen; tiap segmen kumulatif
   hiwItems.forEach((el, i) => {
-    tl.from(el, {scale: .96, duration: 0.3 }, i);
+    tl.from(el, { duration: 0.3 }, i);
     tl.call(setActiveUpTo, [i], i + 0.001);
   });
 
   tl.to({}, { duration: 0.5 });
 // #endregion ========== CARA KERJA =============
-
-
-
-
 
 // #region ============= BENEFIT =============
   const putar = document.querySelector('#benefit .rotating');
@@ -456,95 +452,6 @@
   }
   
 // #endregion ========== BENEFIT =============
-
-// #region ============= KENAPA =============
-  const alasan = document.querySelector('#kenapa .alasan');
-  const movingImg = document.querySelector('#kenapa .alasan .right');
-
-  const alasanTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#alasan",
-      start: "bottom bottom",
-      end: "+=100%",
-      scrub: true
-    }
-  });
-
-  alasanTL.to(movingImg, { xPercent: -35, yPercent: 160 })
-// #endregion ========== KENAPA =============
-
-// #region ============= HISTORY =============
-  const timelineTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".timeline",
-      start: "top top",
-      end: "+=500%", 
-      scrub: true,
-      pin: true
-    }
-  });
-
-  const items = document.querySelectorAll('.history .timeline .item');
-  const dotsLine = document.querySelector('.history .timeline .dots .line');
-  const dots = document.querySelectorAll('.history .timeline .dots span');
-
-  const totalItems = items.length;
-
-  items.forEach((item, i) => {
-    if (i === 0) return; // item pertama tidak animasi line
-
-    // animasi item masuk
-    timelineTL.from(item, {
-      bottom: "-100%",
-      opacity: 0,
-      duration: 1
-    }, "+=1");
-
-    // animasi line bertambah sesuai progress
-    const progress = (i / (totalItems - 1)) * 100;
-    timelineTL.to(dotsLine, { height: progress + "%" }, "<");
-
-    // animasi dot berubah warna
-    timelineTL.to(dots[i], { backgroundColor: "var(--secondary)", scale: "1", duration: 2 }, "<");
-  });
-// #endregion ========== HISTORY =============
-
-// #region ============= COUNTER PROMO =============
-  function getMonthlyCountdown() {
-    const now = new Date();
-
-    // Tanggal 1 bulan berikutnya jam 00:00:00
-    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0);
-
-    const diff = nextMonth - now;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    return { days, hours, minutes, seconds };
-  }
-
-  //buat agar 2 digit
-  function formatNumber(num) {
-    return String(num).padStart(2, "0");
-  }
-
-  function updateTimer() {
-    const countdown = getMonthlyCountdown();
-    document.getElementById("promoDays").textContent = `${formatNumber(countdown.days)}`;
-    document.getElementById("promoHours").textContent = `${formatNumber(countdown.hours)}`;
-    document.getElementById("promoMinutes").textContent = `${formatNumber(countdown.minutes)}`;
-    document.getElementById("promoSeconds").textContent = `${formatNumber(countdown.seconds)}`;
-  }
-
-  // Jalankan langsung pertama kali
-  updateTimer();
-
-  // Update tiap detik
-  setInterval(updateTimer, 1000);
-// #endregion ========== COUNTER PROMO =============
 
 // #region ============= TESTIMONI =============
   const photosWrap = document.querySelector('#testimoni .photos .wrap');
@@ -584,6 +491,34 @@
   });
 // #endregion ========== TESTIMONI =============
 
+// #region ============= MINI STRIP =============
+  // GSAP counter
+  const memberCounterObj = { val: 0 };
+  const memberCounterID = document.getElementById("memberCounter");
+
+  // Buat animasi counter (pause dulu)
+  const memberCounterTL = gsap.to(memberCounterObj, {
+    val: 3000,
+    duration: 2,
+    ease: "power1.out",
+    paused: true,
+    onUpdate: () => {
+      memberCounterID.textContent =
+      Math.floor(memberCounterObj.val / 20) * 20;
+    }
+  });
+
+  // ScrollTrigger untuk restart animasi setiap kali masuk
+  ScrollTrigger.create({
+    trigger: "#miniStrip",
+    start: "+=30% center",
+    onEnter: () => {
+      memberCounterObj.val = 0; // reset angka
+      memberCounterTL.restart();
+    }
+  });
+// #endregion ========== MINI STRIP =============
+
 // #region ============= GET YEAR =============
   function getYear() {
     return new Date().getFullYear();
@@ -599,7 +534,78 @@
 
 
 
+// #region ============= HISTORY =============
+  // const timelineTL = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".timeline",
+  //     start: "top top",
+  //     end: "+=500%", 
+  //     scrub: true,
+  //     pin: true
+  //   }
+  // });
 
+  // const items = document.querySelectorAll('.history .timeline .item');
+  // const dotsLine = document.querySelector('.history .timeline .dots .line');
+  // const dots = document.querySelectorAll('.history .timeline .dots span');
+
+  // const totalItems = items.length;
+
+  // items.forEach((item, i) => {
+  //   if (i === 0) return; // item pertama tidak animasi line
+
+  //   // animasi item masuk
+  //   timelineTL.from(item, {
+  //     bottom: "-100%",
+  //     opacity: 0,
+  //     duration: 1
+  //   }, "+=1");
+
+  //   // animasi line bertambah sesuai progress
+  //   const progress = (i / (totalItems - 1)) * 100;
+  //   timelineTL.to(dotsLine, { height: progress + "%" }, "<");
+
+  //   // animasi dot berubah warna
+  //   timelineTL.to(dots[i], { backgroundColor: "var(--secondary)", scale: "1", duration: 2 }, "<");
+  // });
+// #endregion ========== HISTORY =============
+
+// #region ============= COUNTER PROMO =============
+  // function getMonthlyCountdown() {
+  //   const now = new Date();
+
+  //   // Tanggal 1 bulan berikutnya jam 00:00:00
+  //   const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0);
+
+  //   const diff = nextMonth - now;
+
+  //   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  //   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  //   const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  //   const seconds = Math.floor((diff / 1000) % 60);
+
+  //   return { days, hours, minutes, seconds };
+  // }
+
+  // //buat agar 2 digit
+  // function formatNumber(num) {
+  //   return String(num).padStart(2, "0");
+  // }
+
+  // function updateTimer() {
+  //   const countdown = getMonthlyCountdown();
+  //   document.getElementById("promoDays").textContent = `${formatNumber(countdown.days)}`;
+  //   document.getElementById("promoHours").textContent = `${formatNumber(countdown.hours)}`;
+  //   document.getElementById("promoMinutes").textContent = `${formatNumber(countdown.minutes)}`;
+  //   document.getElementById("promoSeconds").textContent = `${formatNumber(countdown.seconds)}`;
+  // }
+
+  // // Jalankan langsung pertama kali
+  // updateTimer();
+
+  // // Update tiap detik
+  // setInterval(updateTimer, 1000);
+// #endregion ========== COUNTER PROMO =============
 
 // #region ============= XXXX =============
 
